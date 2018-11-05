@@ -5,7 +5,8 @@ import javax.persistence.Entity;
 @Entity
 public class Atendente {
 	
-	private int codigo;
+	
+	private long codigo;
 	private String nome;
 	private String ultimoAcesso;
 	private String ramal;

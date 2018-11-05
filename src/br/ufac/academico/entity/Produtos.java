@@ -1,13 +1,14 @@
 package br.ufac.academico.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class Produtos {
 
 	
-	
-	private int proCodigo;
+	@Id
+	private long proCodigo;
 	private Fornecedores fornecedor;
 	private CategoriasProdutos categoria;
 	private String proDescricao;

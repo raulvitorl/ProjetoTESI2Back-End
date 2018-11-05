@@ -1,10 +1,13 @@
 package br.ufac.academico.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class Mensagens {
 
+	@Id
+	private long men_codigo;
 	Atendente men_ate_codigo;
 	TipoMensagens men_tms_codigo;
 	String men_texto;
@@ -33,8 +36,21 @@ public class Mensagens {
 	public void setMen_data_envio(String men_data_envio) {
 		this.men_data_envio = men_data_envio;
 	}
-	public Mensagens(Atendente men_ate_codigo, TipoMensagens men_tms_codigo, String men_texto, String men_data_envio) {
+	
+	
+	public long getMen_codigo() {
+		return men_codigo;
+	}
+	public void setMen_codigo(long men_codigo) {
+		this.men_codigo = men_codigo;
+	}
+	
+	
+	
+	public Mensagens(long men_codigo, Atendente men_ate_codigo, TipoMensagens men_tms_codigo, String men_texto,
+			String men_data_envio) {
 		super();
+		this.men_codigo = men_codigo;
 		this.men_ate_codigo = men_ate_codigo;
 		this.men_tms_codigo = men_tms_codigo;
 		this.men_texto = men_texto;

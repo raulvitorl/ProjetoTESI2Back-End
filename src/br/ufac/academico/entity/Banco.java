@@ -1,11 +1,13 @@
 package br.ufac.academico.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class Banco {
-
-	private int codigo;
+	
+	@Id
+	private long codigo;
 	private String nome;
 	
 	public Banco(int codigo, String nome) {

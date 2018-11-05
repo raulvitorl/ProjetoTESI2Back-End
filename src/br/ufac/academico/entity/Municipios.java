@@ -1,12 +1,13 @@
 package br.ufac.academico.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class Municipios {
 
-
-private int munCodigo;
+	@Id
+private long munCodigo;
 private String munNome;
 private String munUfEstado;
 private String  munCep;

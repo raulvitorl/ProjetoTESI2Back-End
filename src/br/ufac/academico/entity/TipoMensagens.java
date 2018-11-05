@@ -1,12 +1,13 @@
 package br.ufac.academico.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class TipoMensagens {
 	
-	
-	private int tmsCodigo;
+	@Id
+	private long tmsCodigo;
 	private String tmsDescricao;
 	
 public TipoMensagens(){

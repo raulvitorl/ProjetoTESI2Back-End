@@ -1,11 +1,13 @@
 package br.ufac.academico.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class Fornecedores {
 	
-	private int forCodigo;
+	@Id
+	private long forCodigo;
 	private Municipios municipio;
 	private String forRazaoSocial;
 	private	String forNomeContato;

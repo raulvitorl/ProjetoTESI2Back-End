@@ -1,11 +1,13 @@
 package br.ufac.academico.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class Cliente {
 	
-	private int codigo;
+	@Id
+	private long codigo;
 	private Municipios municipio;
 	private String nome;
 	private String dataNascimento;
