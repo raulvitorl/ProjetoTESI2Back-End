@@ -19,9 +19,7 @@ public class AtendenteDB {
 		this.cnx = cnx;
 	}
 	
-	public AtendenteDB() {
-		// TODO Auto-generated constructor stub
-	}
+	public AtendenteDB(){	}
 	
 	public void setConexao(Conexao cnx){
 		this.cnx = cnx;

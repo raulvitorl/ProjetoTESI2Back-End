@@ -1,18 +1,20 @@
 package br.ufac.academico.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class Vendas {
 	
-	private int venCodigo;
-	private Cliente cliente;
-	private Atendente atendente;
-	private Banco banco;
-	private float venValorTotal;
-	private String venFormaPagamento;
-	private String venObservacoes;
-		
+	@Id
+	private long ven_codigo;
+	private Cliente ven_cli_codigo;
+	private Atendente ven_ate_codigo;
+	private Banco ven_ban_codigo;
+	private float ven_valor_total;
+	private String ven_forma_pagamento;
+	private String ven_observacoes;
+	private Produtos ven_pro_codigo;
 	
 	public Vendas(){
 		
@@ -22,55 +24,55 @@ public class Vendas {
 	public Vendas(int venCodigo, Cliente cliente, Atendente atendente, Banco banco, float venValorTotal,
 			String venFormaPagamento, String venObservacoes) {
 		super();
-		this.venCodigo = venCodigo;
-		this.cliente = cliente;
-		this.atendente = atendente;
-		this.banco = banco;
-		this.venValorTotal = venValorTotal;
-		this.venFormaPagamento = venFormaPagamento;
-		this.venObservacoes = venObservacoes;
+		this.ven_codigo = venCodigo;
+		this.ven_cli_codigo = cliente;
+		this.ven_ate_codigo = atendente;
+		this.ven_ban_codigo = banco;
+		this.ven_valor_total = venValorTotal;
+		this.ven_forma_pagamento = venFormaPagamento;
+		this.ven_observacoes = venObservacoes;
 	}
 	public Cliente getCliente() {
-		return cliente;
+		return ven_cli_codigo;
 	}
 	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
+		this.ven_cli_codigo = cliente;
 	}
 	public Atendente getAtendente() {
-		return atendente;
+		return ven_ate_codigo;
 	}
 	public void setAtendente(Atendente atendente) {
-		this.atendente = atendente;
+		this.ven_ate_codigo = atendente;
 	}
 	public Banco getBanco() {
-		return banco;
+		return ven_ban_codigo;
 	}
 	public void setBanco(Banco banco) {
-		this.banco = banco;
+		this.ven_ban_codigo = banco;
 	}
-	public int getVenCodigo() {
-		return venCodigo;
+	public long getVenCodigo() {
+		return ven_codigo;
 	}
 	public void setVenCodigo(int venCodigo) {
-		this.venCodigo = venCodigo;
+		this.ven_codigo = venCodigo;
 	}
 	public float getVenValorTotal() {
-		return venValorTotal;
+		return ven_valor_total;
 	}
 	public void setVenValorTotal(float venValorTotal) {
-		this.venValorTotal = venValorTotal;
+		this.ven_valor_total = venValorTotal;
 	}
 	public String getVenFormaPagamento() {
-		return venFormaPagamento;
+		return ven_forma_pagamento;
 	}
 	public void setVenFormaPagamento(String venFormaPagamento) {
-		this.venFormaPagamento = venFormaPagamento;
+		this.ven_forma_pagamento = venFormaPagamento;
 	}
 	public String getVenObservacoes() {
-		return venObservacoes;
+		return ven_observacoes;
 	}
 	public void setVenObservacoes(String venObservacoes) {
-		this.venObservacoes = venObservacoes;
+		this.ven_observacoes = venObservacoes;
 	}
 	
 	

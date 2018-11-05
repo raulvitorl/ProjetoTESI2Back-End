@@ -49,7 +49,7 @@ public class VendasDB {
 		
 	}
 	
-	public Vendas getVenda (int codigo) throws
+	public Vendas getVenda (long l) throws
 		DataBaseGenericException, 
 		DataBaseNotConnectedException,
 		EntityNotExistException
@@ -62,7 +62,7 @@ public class VendasDB {
 		
 		String strBusca = "SELECT * "
 				+ "FROM vendas "
-				+ "WHERE VEN_CODIGO = '" + codigo + "';";
+				+ "WHERE VEN_CODIGO = '" + l + "';";
 		
 		rs = cnx.consulte(strBusca);
 		
@@ -82,7 +82,7 @@ public class VendasDB {
 				rs.getString(6),
 				rs.getString(7));  
 			}else {
-				throw new EntityNotExistException("Produto (codigo='" + codigo + "')");
+				throw new EntityNotExistException("Produto (codigo='" + l + "')");
 			}
 		} catch (SQLException sqle) {
 			throw new DataBaseGenericException(sqle.getErrorCode(), 
