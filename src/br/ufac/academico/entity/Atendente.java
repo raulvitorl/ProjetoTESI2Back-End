@@ -1,5 +1,8 @@
 package br.ufac.academico.entity;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Atendente {
 	
 	private int codigo;
