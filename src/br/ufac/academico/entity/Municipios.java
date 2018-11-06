@@ -35,30 +35,21 @@ public Municipios(int munCodigo, String munNome, String munUfEstado, String munC
 	this.munCep = munCep;
 }
 
-public long getMunCodigo() {
-	return mun_codigo;
-}
-public void setMunCodigo(int munCodigo) {
-	this.mun_codigo = munCodigo;
-}
-public String getMunNome() {
-	return munNome;
-}
-public void setMunNome(String munNome) {
-	this.munNome = munNome;
-}
-public String getMunUfEstado() {
-	return munUfEstado;
-}
-public void setMunUfEstado(String munUfEstado) {
-	this.munUfEstado = munUfEstado;
-}
-public String getMunCep() {
-	return munCep;
-}
-public void setMunCep(String munCep) {
-	this.munCep = munCep;
-}
+public long getMunCodigo() {return mun_codigo;}
+
+public void setMunCodigo(int munCodigo) {this.mun_codigo = munCodigo;}
+
+public String getMunNome() {return munNome;}
+
+public void setMunNome(String munNome) {this.munNome = munNome;}
+
+public String getMunUfEstado(){return munUfEstado;}
+
+public void setMunUfEstado(String munUfEstado) {this.munUfEstado = munUfEstado;}
+
+public String getMunCep() {return munCep;}
+
+public void setMunCep(String munCep) {this.munCep = munCep;}
 
 
 
