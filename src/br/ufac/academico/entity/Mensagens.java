@@ -1,12 +1,15 @@
 package br.ufac.academico.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class Mensagens {
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long men_codigo;
 	Atendente men_ate_codigo;
 	TipoMensagens men_tms_codigo;
