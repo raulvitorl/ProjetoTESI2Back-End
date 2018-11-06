@@ -52,7 +52,7 @@ public Produtos(){
 	public void setCategoria(CategoriasProdutos categoria) {
 		this.categoria = categoria;
 	}
-	public int getProCodigo() {
+	public long getProCodigo() {
 		return proCodigo;
 	}
 	public void setProCodigo(int proCodigo) {

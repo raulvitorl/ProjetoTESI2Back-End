@@ -56,7 +56,7 @@ public class Cliente {
 	public void setMunicipio(Municipios municipio) {
 		this.municipio = municipio;
 	}
-	public int getCodigo() {
+	public long getCodigo() {
 		return codigo;
 	}
 	public void setCodigo(int codigo) {

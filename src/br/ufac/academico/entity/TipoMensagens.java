@@ -20,7 +20,7 @@ public TipoMensagens(){
 		this.tmsDescricao = tmsDescricao;
 	}
 	
-	public int getTmsCodigo() {
+	public long getTmsCodigo() {
 		return tmsCodigo;
 	}
 	public void setTmsCodigo(int tmsCodigo) {

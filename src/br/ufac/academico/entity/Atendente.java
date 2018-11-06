@@ -1,11 +1,12 @@
 package br.ufac.academico.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class Atendente {
 	
-	
+	@Id
 	private long codigo;
 	private String nome;
 	private String ultimoAcesso;
@@ -31,7 +32,7 @@ public class Atendente {
 	}
 	
 	
-	public int getCodigo() {
+	public long getCodigo() {
 		return codigo;
 	}
 	public void setCodigo(int codigo) {

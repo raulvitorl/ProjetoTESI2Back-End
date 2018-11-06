@@ -19,7 +19,7 @@ public class Banco {
 		
 	}
 
-	public int getCodigo() {
+	public long getCodigo() {
 		return codigo;
 	}
 

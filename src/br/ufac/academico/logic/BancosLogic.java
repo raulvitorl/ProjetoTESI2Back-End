@@ -52,7 +52,7 @@ public class BancosLogic {
 		
 	}
 	
-	public Banco getBanco(int banCodigo) throws
+	public Banco getBanco(long banCodigo) throws
 		DataBaseGenericException,
 		DataBaseNotConnectedException,
 		EntityNotExistException 

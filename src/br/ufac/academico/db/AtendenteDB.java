@@ -50,7 +50,7 @@ public class AtendenteDB {
 		
 	}
 	
-	public Atendente getAtendente (int codigo) throws
+	public Atendente getAtendente (long l) throws
 		DataBaseGenericException, 
 		DataBaseNotConnectedException,
 		EntityNotExistException
@@ -60,7 +60,7 @@ public class AtendenteDB {
 		
 		String strBusca = "SELECT * "
 				+ "FROM atendentes "
-				+ "WHERE ATE_CODIGO = '" + codigo + "';";
+				+ "WHERE ATE_CODIGO = '" + l + "';";
 		
 		rs = cnx.consulte(strBusca);
 		
@@ -75,7 +75,7 @@ public class AtendenteDB {
 						rs.getString(6).charAt(0)
 						);  
 			}else {
-				throw new EntityNotExistException("Atendente (codigo='" + codigo + "')");
+				throw new EntityNotExistException("Atendente (codigo='" + l + "')");
 			}
 		} catch (SQLException sqle) {
 			throw new DataBaseGenericException(sqle.getErrorCode(), 

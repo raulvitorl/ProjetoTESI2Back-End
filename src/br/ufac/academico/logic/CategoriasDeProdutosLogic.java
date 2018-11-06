@@ -52,13 +52,13 @@ public class CategoriasDeProdutosLogic {
 		
 	}
 	
-	public CategoriasProdutos getCategoria(int catCodigo) throws
+	public CategoriasProdutos getCategoria(long proCatCodigo) throws
 		DataBaseGenericException,
 		DataBaseNotConnectedException,
 		EntityNotExistException 
 	{
 
-		return cdb.getCategoriaDeProduto(catCodigo);
+		return cdb.getCategoriaDeProduto(proCatCodigo);
 		
 	}
 

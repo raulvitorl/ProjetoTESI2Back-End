@@ -51,7 +51,7 @@ public class MunicipiosDB {
 		
 	}
 	
-	public Municipios getMunicipio (int codigo) throws
+	public Municipios getMunicipio (long l) throws
 	DataBaseGenericException, 
 	DataBaseNotConnectedException,
 	EntityNotExistException
@@ -60,7 +60,7 @@ public class MunicipiosDB {
 	
 	String strBusca = "SELECT * "
 			+ "FROM municipios "
-			+ "WHERE MUN_CODIGO = '" + codigo + "';";
+			+ "WHERE MUN_CODIGO = '" + l + "';";
 	
 	rs = cnx.consulte(strBusca);
 	
@@ -74,7 +74,7 @@ public class MunicipiosDB {
 			rs.getString(4)
 			);
 		}else {
-			throw new EntityNotExistException("Municipio (codigo='" + codigo + "')");
+			throw new EntityNotExistException("Municipio (codigo='" + l + "')");
 		}
 	} catch (SQLException sqle) {
 		throw new DataBaseGenericException(sqle.getErrorCode(), 

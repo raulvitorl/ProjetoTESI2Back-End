@@ -25,7 +25,7 @@ public class ClientesLogic {
 	}
 	
 
-	public boolean addCliente(int codigo, int cliMunCodigo, String nome, String dataNascimento, char sexo, String cpf,
+	public boolean addCliente(int codigo, long cliMunCodigo, String nome, String dataNascimento, char sexo, String cpf,
 			String rg, String cnpj, String endereco, String email, String dataCadastro, char tipo, char status,
 			String fone, String nomeContato)
 	throws
@@ -82,13 +82,13 @@ public class ClientesLogic {
 
 	}
 
-	public Cliente getCliente(int codigo) throws
+	public Cliente getCliente(long cliCodigo) throws
 	DataBaseGenericException,
 	DataBaseNotConnectedException,
 	EntityNotExistException 
 	{
 
-		return cdb.getCliente(codigo);
+		return cdb.getCliente(cliCodigo);
 
 	}
 
@@ -102,7 +102,7 @@ public class ClientesLogic {
 
 	}
 	
-	public boolean updCliente(int codigo, int cliMunCodigo, String nome, String dataNascimento, char sexo, String cpf,
+	public boolean updCliente(int codigo, long cliMunCodigo, String nome, String dataNascimento, char sexo, String cpf,
 			String rg, String cnpj, String endereco, String email, String dataCadastro, char tipo, char status,
 			String fone, String nomeContato) throws
 		DataBaseGenericException, 
@@ -158,7 +158,7 @@ public class ClientesLogic {
 
 	}
 
-	public boolean delCliente(int codigo, int cliMunCodigo, String nome, String dataNascimento, char sexo, String cpf,
+	public boolean delCliente(int codigo, long cliMunCodigo, String nome, String dataNascimento, char sexo, String cpf,
 			String rg, String cnpj, String endereco, String email, String dataCadastro, char tipo, char status,
 			String fone, String nomeContato) throws
 		DataBaseGenericException, 

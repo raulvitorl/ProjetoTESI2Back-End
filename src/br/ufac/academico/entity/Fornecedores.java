@@ -42,7 +42,7 @@ public class Fornecedores {
 		this.forEmail = forEmail;
 		this.forWebSite = forWebSite;
 	}
-	public int getForCodigo() {
+	public long getForCodigo() {
 		return forCodigo;
 	}
 	public void setForCodigo(int forCodigo) {

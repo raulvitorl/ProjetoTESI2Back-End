@@ -198,7 +198,7 @@ class ClientesCadastro extends JFrame {
 
 			int codigo = -1;
 			Municipios municipio = null;
-			int cliMunCodigo;
+			long cliMunCodigo;
 			String nome;
 			String dataNascimento;
 			char sexo;

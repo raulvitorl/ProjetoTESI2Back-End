@@ -67,7 +67,7 @@ public class ClientesDB {
 		
 	}
 	
-	public Cliente getCliente (int codigo) throws
+	public Cliente getCliente (long l) throws
 		DataBaseGenericException, 
 		DataBaseNotConnectedException,
 		EntityNotExistException
@@ -78,7 +78,7 @@ public class ClientesDB {
 		
 		String strBusca = "SELECT * "
 				+ "FROM clientes "
-				+ "WHERE CLI_CODIGO = '" + codigo + "';";
+				+ "WHERE CLI_CODIGO = '" + l + "';";
 		
 		rs = cnx.consulte(strBusca);
 		
@@ -105,7 +105,7 @@ public class ClientesDB {
 				rs.getString(15)
 						);  
 			}else {
-				throw new EntityNotExistException("Cliente (codigo='" + codigo + "')");
+				throw new EntityNotExistException("Cliente (codigo='" + l + "')");
 			}
 		} catch (SQLException sqle) {
 			throw new DataBaseGenericException(sqle.getErrorCode(), 

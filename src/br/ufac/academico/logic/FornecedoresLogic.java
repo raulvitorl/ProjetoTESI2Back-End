@@ -26,7 +26,7 @@ public class FornecedoresLogic {
 	}
 	
 	public boolean addFornecedor(
-	int forCodigo, int forMunCodigo, String forRazaoSocial, String forNomeContato,
+	int forCodigo, long forMunCodigo, String forRazaoSocial, String forNomeContato,
 	String forNomeFantasia, String forCnpj, String forEndereco, String forDataCadastro, String forFone,
 	String forEmail, String forWebSite)
 	throws
@@ -83,13 +83,13 @@ public class FornecedoresLogic {
 
 	}
 
-	public Fornecedores getFornecedor(int codigo) throws
+	public Fornecedores getFornecedor(long proForCodigo) throws
 	DataBaseGenericException,
 	DataBaseNotConnectedException,
 	EntityNotExistException 
 	{
 
-		return fdb.getFornecedor(codigo);
+		return fdb.getFornecedor(proForCodigo);
 
 	}
 
@@ -104,7 +104,7 @@ public class FornecedoresLogic {
 	}
 	
 	public boolean updFornecedores(
-			int forCodigo, int forMunCodigo, String forRazaoSocial, String forNomeContato,
+			int forCodigo, long forMunCodigo, String forRazaoSocial, String forNomeContato,
 			String forNomeFantasia, String forCnpj, String forEndereco, String forDataCadastro, String forFone,
 			String forEmail, String forWebSite) throws
 		DataBaseGenericException, 
@@ -161,7 +161,7 @@ public class FornecedoresLogic {
 
 	}
 
-	public boolean delFornecedores(int forCodigo, int forMunCodigo, String forRazaoSocial, String forNomeContato,
+	public boolean delFornecedores(int forCodigo, long forMunCodigo, String forRazaoSocial, String forNomeContato,
 			String forNomeFantasia, String forCnpj, String forEndereco, String forDataCadastro, String forFone,
 			String forEmail, String forWebSite) throws
 		DataBaseGenericException, 

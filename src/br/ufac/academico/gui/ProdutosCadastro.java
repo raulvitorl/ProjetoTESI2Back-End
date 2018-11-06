@@ -164,9 +164,9 @@ class ProdutosCadastro extends JFrame {
 
 			int proCodigo = -1;
 			Fornecedores fornecedor = null;
-			int proForCodigo;
+			long proForCodigo;
 			CategoriasProdutos categoria= null;
-			int proCatCodigo;
+			long proCatCodigo;
 			String proDescricao;
 			int proQntDisponivel;
 			String proUltimaAquisicao; 

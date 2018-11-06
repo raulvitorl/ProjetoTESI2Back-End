@@ -138,7 +138,7 @@ class FornecedorCadastro extends JFrame {
 
 			int forCodigo = -1;
 			Municipios municipio=null;
-			int forMunCodigo;
+			long forMunCodigo;
 			String forRazaoSocial;
 			String forNomeContato;
 			String forNomeFantasia; 

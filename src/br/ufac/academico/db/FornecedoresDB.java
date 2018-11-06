@@ -68,7 +68,7 @@ public class FornecedoresDB {
 		
 	}
 	
-	public Fornecedores getFornecedor (int codigo) throws
+	public Fornecedores getFornecedor (long l) throws
 		DataBaseGenericException, 
 		DataBaseNotConnectedException,
 		EntityNotExistException
@@ -79,7 +79,7 @@ public class FornecedoresDB {
 		
 		String strBusca = "SELECT * "
 				+ "FROM fornecedores "
-				+ "WHERE FOR_CODIGO = '" + codigo + "';";
+				+ "WHERE FOR_CODIGO = '" + l + "';";
 		
 		rs = cnx.consulte(strBusca);
 		
@@ -101,7 +101,7 @@ public class FornecedoresDB {
 				rs.getString(10),
 				rs.getString(11));  
 			}else {
-				throw new EntityNotExistException("Municipio (codigo='" + codigo + "')");
+				throw new EntityNotExistException("Municipio (codigo='" + l + "')");
 			}
 		} catch (SQLException sqle) {
 			throw new DataBaseGenericException(sqle.getErrorCode(), 

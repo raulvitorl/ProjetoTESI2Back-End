@@ -54,13 +54,13 @@ public class AtendentesLogic {
 		return adb.addAtendente(a);
 		
 	}
-	public Atendente getAtendente(int codigo) throws
+	public Atendente getAtendente(long ateCodigo) throws
 	DataBaseGenericException,
 	DataBaseNotConnectedException,
 	EntityNotExistException 
 {
 
-	return adb.getAtendente(codigo);
+	return adb.getAtendente(ateCodigo);
 	
 }
 	

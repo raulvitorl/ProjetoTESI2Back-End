@@ -158,11 +158,11 @@ class VendasCadastro extends JFrame {
 
 			int venCodigo = 0;
 			Cliente cliente = null;
-			int cliCodigo;
+			long cliCodigo;
 			Atendente atendente=null;
-			int ateCodigo;
+			long ateCodigo;
 			Banco banco = null;
-			int banCodigo;
+			long banCodigo;
 			float venValorTotal;
 			String venFormaPagamento;
 			String venObservacoes;

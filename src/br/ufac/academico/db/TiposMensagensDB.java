@@ -74,7 +74,7 @@ public class TiposMensagensDB {
 		return b;
 	}
 	
-	public TipoMensagens getTipoMensagens (int TipoMensagensdigo) throws
+	public TipoMensagens getTipoMensagens (long l) throws
 	DataBaseGenericException, 
 	DataBaseNotConnectedException,
 	EntityNotExistException
@@ -82,7 +82,7 @@ public class TiposMensagensDB {
 
 	TipoMensagens b = null;
 	
-	String strBusca = "SELECT * FROM tipo_mensagens WHERE TMS_CODIGO = " + TipoMensagensdigo + "";
+	String strBusca = "SELECT * FROM tipo_mensagens WHERE TMS_CODIGO = " + l + "";
 	
 	rs = cnx.consulte(strBusca);
 	
@@ -90,7 +90,7 @@ public class TiposMensagensDB {
 		if (rs.next()) {
 			b = new TipoMensagens(rs.getInt(1), rs.getString(2)); 
 		}else {
-			throw new EntityNotExistException("TipoMensagens (codigo='" + TipoMensagensdigo + "')");
+			throw new EntityNotExistException("TipoMensagens (codigo='" + l + "')");
 		}
 	} catch (SQLException sqle) {
 		throw new DataBaseGenericException(sqle.getErrorCode(), 

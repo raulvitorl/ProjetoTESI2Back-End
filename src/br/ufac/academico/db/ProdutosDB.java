@@ -52,7 +52,7 @@ public class ProdutosDB {
 		
 	}
 	
-	public Produtos getProduto (int codigo) throws
+	public Produtos getProduto (long l) throws
 		DataBaseGenericException, 
 		DataBaseNotConnectedException,
 		EntityNotExistException
@@ -64,7 +64,7 @@ public class ProdutosDB {
 		
 		String strBusca = "SELECT * "
 				+ "FROM produtos "
-				+ "WHERE PRO_CODIGO = '" + codigo + "';";
+				+ "WHERE PRO_CODIGO = '" + l + "';";
 		
 		rs = cnx.consulte(strBusca);
 		
@@ -85,7 +85,7 @@ public class ProdutosDB {
 				rs.getString(8),
 				rs.getString(9));  
 			}else {
-				throw new EntityNotExistException("Produto (codigo='" + codigo + "')");
+				throw new EntityNotExistException("Produto (codigo='" + l + "')");
 			}
 		} catch (SQLException sqle) {
 			throw new DataBaseGenericException(sqle.getErrorCode(), 

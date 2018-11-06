@@ -18,7 +18,7 @@ public class ProdutosLogic {
 		cpl = new CategoriasDeProdutosLogic(cnx);
 	}
 
-	public boolean addProduto(int proCodigo, int proForCodigo, int proCatCodigo, String proDescricao,
+	public boolean addProduto(int proCodigo, long proForCodigo, long proCatCodigo, String proDescricao,
 			int proQntDisponivel, String proUltimaAquisicao, float proValorUnitario, String proFabricante,
 			String proDetalhes)
 	throws
@@ -82,7 +82,7 @@ public class ProdutosLogic {
 
 	}
 
-	public boolean updProduto(int proCodigo, int proForCodigo, int proCatCodigo, String proDescricao,
+	public boolean updProduto(int proCodigo, long proForCodigo, long proCatCodigo, String proDescricao,
 			int proQntDisponivel, String proUltimaAquisicao, float proValorUnitario, String proFabricante,
 			String proDetalhes)
 	throws

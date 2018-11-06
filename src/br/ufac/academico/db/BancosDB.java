@@ -71,7 +71,7 @@ public class BancosDB {
 	}
 
 	
-	public Banco getBanco (int banCodigo) throws
+	public Banco getBanco (long l) throws
 	DataBaseGenericException, 
 	DataBaseNotConnectedException,
 	EntityNotExistException
@@ -79,7 +79,7 @@ public class BancosDB {
 
 	Banco b = null;
 	
-	String strBusca = "SELECT * FROM bancos WHERE BAN_CODIGO = " + banCodigo + "";
+	String strBusca = "SELECT * FROM bancos WHERE BAN_CODIGO = " + l + "";
 	
 	rs = cnx.consulte(strBusca);
 	
@@ -87,7 +87,7 @@ public class BancosDB {
 		if (rs.next()) {
 			b = new Banco(rs.getInt(1), rs.getString(2)); 
 		}else {
-			throw new EntityNotExistException("Banco (codigo='" + banCodigo + "')");
+			throw new EntityNotExistException("Banco (codigo='" + l + "')");
 		}
 	} catch (SQLException sqle) {
 		throw new DataBaseGenericException(sqle.getErrorCode(), 

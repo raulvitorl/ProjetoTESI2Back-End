@@ -25,7 +25,7 @@ public CategoriasProdutos(){
 	
 	
 	
-	public int getCatCodigo() {
+	public long getCatCodigo() {
 		return catCodigo;
 	}
 	public void setCatCodigo(int catCodigo) {

@@ -19,7 +19,7 @@ public class VendasLogic {
 		cl = new ClientesLogic(cnx);
 	}
 
-	public boolean addProduto(int venCodigo, int cliCodigo, int ateCodigo, int banCodigo, float venValorTotal,
+	public boolean addProduto(int venCodigo, long cliCodigo, long ateCodigo, long banCodigo, float venValorTotal,
 	String venFormaPagamento, String venObservacoes)
 	throws
 	DataBaseGenericException, 
@@ -91,7 +91,7 @@ public class VendasLogic {
 
 	}
 
-	public boolean updVenda(int venCodigo, int cliCodigo, int ateCodigo, int banCodigo, float venValorTotal,
+	public boolean updVenda(int venCodigo, long cliCodigo, long ateCodigo, long banCodigo, float venValorTotal,
 			String venFormaPagamento, String venObservacoes)
 	throws
 	DataBaseGenericException, 

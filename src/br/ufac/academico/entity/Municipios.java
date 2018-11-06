@@ -26,7 +26,7 @@ public Municipios(int munCodigo, String munNome, String munUfEstado, String munC
 	this.munCep = munCep;
 }
 
-public int getMunCodigo() {
+public long getMunCodigo() {
 	return munCodigo;
 }
 public void setMunCodigo(int munCodigo) {

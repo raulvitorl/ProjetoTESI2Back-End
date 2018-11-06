@@ -77,7 +77,7 @@ public class CategoriasDeProdutosDB {
 	}
 
 	
-	public CategoriasProdutos getCategoriaDeProduto (int catCodigo) throws
+	public CategoriasProdutos getCategoriaDeProduto (long l) throws
 	DataBaseGenericException, 
 	DataBaseNotConnectedException,
 	EntityNotExistException
@@ -85,7 +85,7 @@ public class CategoriasDeProdutosDB {
 
 	CategoriasProdutos cdp = null;
 	
-	String strBusca = "SELECT * FROM categorias_produtos WHERE CAT_CODIGO = " + catCodigo + "";
+	String strBusca = "SELECT * FROM categorias_produtos WHERE CAT_CODIGO = " + l + "";
 	
 	rs = cnx.consulte(strBusca);
 	
@@ -93,7 +93,7 @@ public class CategoriasDeProdutosDB {
 		if (rs.next()) {
 			cdp = new CategoriasProdutos(rs.getInt(1), rs.getInt(2), rs.getString(3)); 
 		}else {
-			throw new EntityNotExistException("Categoria (codigo='" + catCodigo + "')");
+			throw new EntityNotExistException("Categoria (codigo='" + l + "')");
 		}
 	} catch (SQLException sqle) {
 		throw new DataBaseGenericException(sqle.getErrorCode(), 

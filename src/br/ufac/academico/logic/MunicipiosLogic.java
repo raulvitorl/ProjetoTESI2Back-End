@@ -60,13 +60,13 @@ public class MunicipiosLogic {
 		return mdb.addMunicipio(m);
 		
 	}
-	public Municipios getMunicipio(int codigo) throws
+	public Municipios getMunicipio(long cliMunCodigo) throws
 	DataBaseGenericException,
 	DataBaseNotConnectedException,
 	EntityNotExistException 
 {
 
-	return mdb.getMunicipio(codigo);
+	return mdb.getMunicipio(cliMunCodigo);
 	
 }
 	
