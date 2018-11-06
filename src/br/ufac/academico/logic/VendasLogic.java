@@ -27,9 +27,9 @@ public class VendasLogic {
 	EntityAlreadyExistException,
 	InvalidFieldException{
 
-		Atendente a = null;
-		Cliente c = null;
-		Banco b = null;
+		Atendentes a = null;
+		Clientes c = null;
+		Bancos b = null;
 		
 		List<String> camposInvalidos = new ArrayList<String>();
 		boolean haCamposInvalidos = false;
@@ -99,9 +99,9 @@ public class VendasLogic {
 	EntityNotExistException,
 	InvalidFieldException{
 
-		Atendente a = null;
-		Cliente c = null;
-		Banco b = null;
+		Atendentes a = null;
+		Clientes c = null;
+		Bancos b = null;
 		
 		List<String> camposInvalidos = new ArrayList<String>();
 		boolean haCamposInvalidos = false;

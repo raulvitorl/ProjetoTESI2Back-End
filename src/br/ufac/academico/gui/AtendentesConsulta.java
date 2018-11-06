@@ -3,7 +3,7 @@ package br.ufac.academico.gui;
 import javax.swing.*; 					//importando classes do Swing
 
 import br.ufac.academico.db.*;
-import br.ufac.academico.entity.Atendente;
+import br.ufac.academico.entity.Atendentes;
 import br.ufac.academico.entity.Municipios;
 import br.ufac.academico.exception.DataBaseGenericException;
 import br.ufac.academico.exception.DataBaseNotConnectedException;
@@ -209,7 +209,7 @@ class AtendentesConsulta extends JFrame {
 
 	public void buscar() {
 
-		List<Atendente> listaDeAtendentes = new ArrayList<Atendente>();
+		List<Atendentes> listaDeAtendentes = new ArrayList<Atendentes>();
 		try {
 			if(fldValor.getText().equals("")) {
 				listaDeAtendentes = al.getAtendentes();

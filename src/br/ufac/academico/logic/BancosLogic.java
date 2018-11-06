@@ -47,12 +47,12 @@ public class BancosLogic {
 			throw new InvalidFieldException("Bancos", camposInvalidos);
 		}			
 		
-		Banco b = new Banco(banCodigo,banNome);
+		Bancos b = new Bancos(banCodigo,banNome);
 		return bdb.addBanco(b);
 		
 	}
 	
-	public Banco getBanco(long banCodigo) throws
+	public Bancos getBanco(long banCodigo) throws
 		DataBaseGenericException,
 		DataBaseNotConnectedException,
 		EntityNotExistException 
@@ -62,7 +62,7 @@ public class BancosLogic {
 		
 	}
 
-	public Banco getBancoPorNome(String banNome) throws
+	public Bancos getBancoPorNome(String banNome) throws
 	DataBaseGenericException,
 	DataBaseNotConnectedException,
 	EntityNotExistException 
@@ -96,7 +96,7 @@ public class BancosLogic {
 	if (haCamposInvalidos){
 		throw new InvalidFieldException("Bancos", camposInvalidos);
 	}	
-	Banco b = new Banco(banCodigo, banNome);
+	Bancos b = new Bancos(banCodigo, banNome);
 	return bdb.updBanco(b);
 	}
 	
@@ -105,11 +105,11 @@ public class BancosLogic {
 		DataBaseNotConnectedException, 
 		EntityNotExistException 
 	{
-		Banco b = new Banco(banCodigo, banNome);
+		Bancos b = new Bancos(banCodigo, banNome);
 		return bdb.delBanco(b);
 	}
 	
-	public List<Banco> getBancos() throws
+	public List<Bancos> getBancos() throws
 		DataBaseGenericException,
 		DataBaseNotConnectedException, 
 		EntityTableIsEmptyException
@@ -117,7 +117,7 @@ public class BancosLogic {
 		return bdb.getBancos();
 	}
 	
-	public List<Banco> getBancosPorNome(String banNome) throws
+	public List<Bancos> getBancosPorNome(String banNome) throws
 	DataBaseGenericException,
 	DataBaseNotConnectedException, 
 	EntityTableIsEmptyException

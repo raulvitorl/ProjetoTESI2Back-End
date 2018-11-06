@@ -1,25 +1,38 @@
 package br.ufac.academico.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="fornecedores")
 public class Fornecedores {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long forCodigo;
+	@Column(name="for_mun_codigo")
 	private Municipios municipio;
+	@Column(name="for_razao_social")
 	private String forRazaoSocial;
+	@Column(name="for_nome_contato")
 	private	String forNomeContato;
+	@Column(name="for_nome_fantasia")
 	private String forNomeFantasia;
+	@Column(name="for_cnpj")
 	private String forCnpj;
+	@Column(name="for_endereco")
 	private String forEndereco;
+	@Column(name="for_data_cadastro")
 	private String forDataCadastro;
+	@Column(name="for_fone")
 	private String forFone;
+	@Column(name="for_email")
 	private String forEmail;
+	@Column(name="for_website")
 	private String forWebSite;
 	
 	

@@ -1,22 +1,32 @@
 package br.ufac.academico.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="vendas")
 public class Vendas {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long ven_codigo;
-	private Cliente ven_cli_codigo;
-	private Atendente ven_ate_codigo;
-	private Banco ven_ban_codigo;
+	@Column(name="ven_cli_codigo")
+	private Clientes ven_cli_codigo;
+	@Column(name="ven_ate_codigo")
+	private Atendentes ven_ate_codigo;
+	@Column(name="ven_ban_codigo")
+	private Bancos ven_ban_codigo;
+	@Column(name="ven_valor_total")
 	private float ven_valor_total;
+	@Column(name="ven_forma_pagamento")
 	private String ven_forma_pagamento;
+	@Column(name="ven_observacoes")
 	private String ven_observacoes;
+	@Column(name="ven_pro_codigo")
 	private Produtos ven_pro_codigo;
 	
 	public Vendas(){
@@ -24,7 +34,7 @@ public class Vendas {
 	}
 	
 	
-	public Vendas(int venCodigo, Cliente cliente, Atendente atendente, Banco banco, float venValorTotal,
+	public Vendas(int venCodigo, Clientes cliente, Atendentes atendente, Bancos banco, float venValorTotal,
 			String venFormaPagamento, String venObservacoes) {
 		super();
 		this.ven_codigo = venCodigo;
@@ -35,22 +45,22 @@ public class Vendas {
 		this.ven_forma_pagamento = venFormaPagamento;
 		this.ven_observacoes = venObservacoes;
 	}
-	public Cliente getCliente() {
+	public Clientes getCliente() {
 		return ven_cli_codigo;
 	}
-	public void setCliente(Cliente cliente) {
+	public void setCliente(Clientes cliente) {
 		this.ven_cli_codigo = cliente;
 	}
-	public Atendente getAtendente() {
+	public Atendentes getAtendente() {
 		return ven_ate_codigo;
 	}
-	public void setAtendente(Atendente atendente) {
+	public void setAtendente(Atendentes atendente) {
 		this.ven_ate_codigo = atendente;
 	}
-	public Banco getBanco() {
+	public Bancos getBanco() {
 		return ven_ban_codigo;
 	}
-	public void setBanco(Banco banco) {
+	public void setBanco(Bancos banco) {
 		this.ven_ban_codigo = banco;
 	}
 	public long getVenCodigo() {

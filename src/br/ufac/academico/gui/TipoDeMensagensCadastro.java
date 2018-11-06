@@ -3,8 +3,8 @@ package br.ufac.academico.gui;
 import javax.swing.*; 					//importando classes do Swing
 
 import br.ufac.academico.db.*;
-import br.ufac.academico.entity.Banco;
-import br.ufac.academico.entity.TipoMensagens;
+import br.ufac.academico.entity.Bancos;
+import br.ufac.academico.entity.TiposMensagens;
 import br.ufac.academico.exception.DataBaseGenericException;
 import br.ufac.academico.exception.DataBaseNotConnectedException;
 import br.ufac.academico.exception.EntityAlreadyExistException;
@@ -197,7 +197,7 @@ class TipoDeMensagensCadastro extends JFrame {
 
 	public void carregarCampos(int codigo) {
 
-		TipoMensagens tms;
+		TiposMensagens tms;
 		try {
 			tms = bl.getTipoMensagem(codigo);
 			fldTmsCodigo.setText(String.valueOf(tms.getTmsCodigo()));

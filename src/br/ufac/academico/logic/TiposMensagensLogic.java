@@ -53,12 +53,12 @@ public class TiposMensagensLogic {
 			throw new InvalidFieldException("Tipos de Mensagem", camposInvalidos);
 		}			
 		
-		TipoMensagens tm = new TipoMensagens(tmsCodigo, tmsDescricao);
+		TiposMensagens tm = new TiposMensagens(tmsCodigo, tmsDescricao);
 		return bdb.addTipoMensagens(tm);
 		
 	}
 	
-	public TipoMensagens getTipoMensagem(int tmsCodigo) throws
+	public TiposMensagens getTipoMensagem(int tmsCodigo) throws
 		DataBaseGenericException,
 		DataBaseNotConnectedException,
 		EntityNotExistException 
@@ -68,7 +68,7 @@ public class TiposMensagensLogic {
 		
 	}
 
-	public TipoMensagens getTipoMensagensPorDescricao(String descricao) throws
+	public TiposMensagens getTipoMensagensPorDescricao(String descricao) throws
 	DataBaseGenericException,
 	DataBaseNotConnectedException,
 	EntityNotExistException 
@@ -102,7 +102,7 @@ public class TiposMensagensLogic {
 	if (haCamposInvalidos){
 		throw new InvalidFieldException("Tipo Mensagens", camposInvalidos);
 	}	
-	TipoMensagens tm = new TipoMensagens(tmsCodigo, tmsDescricao);
+	TiposMensagens tm = new TiposMensagens(tmsCodigo, tmsDescricao);
 	return bdb.updTipoMensagens(tm);
 	}
 	
@@ -111,11 +111,11 @@ public class TiposMensagensLogic {
 		DataBaseNotConnectedException, 
 		EntityNotExistException 
 	{
-		TipoMensagens tm = new TipoMensagens(tmsCodigo, tmsDescricao);
+		TiposMensagens tm = new TiposMensagens(tmsCodigo, tmsDescricao);
 		return bdb.delTipoMensagens(tm);
 	}
 	
-	public List<TipoMensagens> getTiposMensagens() throws
+	public List<TiposMensagens> getTiposMensagens() throws
 		DataBaseGenericException,
 		DataBaseNotConnectedException, 
 		EntityTableIsEmptyException

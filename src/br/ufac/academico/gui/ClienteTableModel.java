@@ -7,9 +7,9 @@ import java.util.*;
 
 public class ClienteTableModel extends AbstractTableModel{
 
-	List<Cliente> clientes;
+	List<Clientes> clientes;
 
-	public ClienteTableModel(List<Cliente> clientes){
+	public ClienteTableModel(List<Clientes> clientes){
 
 		this.clientes = clientes;
 		
@@ -27,7 +27,7 @@ public class ClienteTableModel extends AbstractTableModel{
 	@Override	
 	public Object getValueAt(int rowIndex, int columnIndex) {		
 
-		Cliente c;
+		Clientes c;
 		Object dado = null;
 		
 		c = clientes.get(rowIndex);

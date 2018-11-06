@@ -3,7 +3,7 @@ package br.ufac.academico.gui;
 import javax.swing.*; 					//importando classes do Swing
 
 import br.ufac.academico.db.*;
-import br.ufac.academico.entity.Banco;
+import br.ufac.academico.entity.Bancos;
 import br.ufac.academico.entity.CategoriasProdutos;
 import br.ufac.academico.entity.Municipios;
 import br.ufac.academico.exception.DataBaseGenericException;
@@ -210,7 +210,7 @@ class BancosConsulta extends JFrame {
 
 	public void buscar() {
 
-		List<Banco> listaDeBancos = new ArrayList<Banco>();
+		List<Bancos> listaDeBancos = new ArrayList<Bancos>();
 		try {
 			if(fldValor.getText().equals("")) {
 				listaDeBancos = bl.getBancos();

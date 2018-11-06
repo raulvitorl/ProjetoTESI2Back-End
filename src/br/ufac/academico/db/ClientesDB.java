@@ -3,7 +3,7 @@ package br.ufac.academico.db;
 import java.sql.*;
 import java.util.*;
 
-import br.ufac.academico.entity.Cliente;
+import br.ufac.academico.entity.Clientes;
 import br.ufac.academico.entity.Municipios;
 import br.ufac.academico.exception.DataBaseGenericException;
 import br.ufac.academico.exception.DataBaseNotConnectedException;
@@ -34,7 +34,7 @@ public class ClientesDB {
 
 
 
-	public boolean addCliente(Cliente a) throws 
+	public boolean addCliente(Clientes a) throws 
 		DataBaseGenericException, 
 		DataBaseNotConnectedException,
 		EntityAlreadyExistException
@@ -67,13 +67,13 @@ public class ClientesDB {
 		
 	}
 	
-	public Cliente getCliente (long l) throws
+	public Clientes getCliente (long l) throws
 		DataBaseGenericException, 
 		DataBaseNotConnectedException,
 		EntityNotExistException
 	{
 
-		Cliente c = null;
+		Clientes c = null;
 		Municipios m = null;
 		
 		String strBusca = "SELECT * "
@@ -87,7 +87,7 @@ public class ClientesDB {
 				
 				m = mdb.getMunicipio(rs.getInt(2));
 				
-				c = new Cliente(
+				c = new Clientes(
 				rs.getInt(1), 
 				m,
 				rs.getString(3),
@@ -115,13 +115,13 @@ public class ClientesDB {
 		return c;
 	}
 	
-	public Cliente getClientePorNome (String nome) throws
+	public Clientes getClientePorNome (String nome) throws
 	DataBaseGenericException, 
 	DataBaseNotConnectedException,
 	EntityNotExistException
 {
 
-	Cliente c = null;
+	Clientes c = null;
 	Municipios m = null;
 	
 	String strBusca = "SELECT * "
@@ -135,7 +135,7 @@ public class ClientesDB {
 			
 			m = mdb.getMunicipio(rs.getInt(2));
 			
-			c = new Cliente(
+			c = new Clientes(
 					rs.getInt(1), 
 					m,
 					rs.getString(3),
@@ -163,7 +163,7 @@ public class ClientesDB {
 	return c;
 }
 	
-	public boolean updCliente(Cliente c) throws
+	public boolean updCliente(Clientes c) throws
 		DataBaseGenericException, 
 		DataBaseNotConnectedException,
 		EntityNotExistException
@@ -193,7 +193,7 @@ public class ClientesDB {
 		
 	}
 	
-	public boolean delClientes(Cliente c) throws
+	public boolean delClientes(Clientes c) throws
 		DataBaseGenericException, 
 		DataBaseNotConnectedException, 
 		EntityNotExistException 
@@ -208,16 +208,16 @@ public class ClientesDB {
 		
 	}		
 	
-	public List<Cliente> getClientes () throws
+	public List<Clientes> getClientes () throws
 		DataBaseGenericException, 
 		DataBaseNotConnectedException,
 		EntityTableIsEmptyException,
 		EntityNotExistException
 	{
 
-		Cliente c = null;
+		Clientes c = null;
 		Municipios m = null;
-		List<Cliente> listaDeCliente = new ArrayList<Cliente>();
+		List<Clientes> listaDeCliente = new ArrayList<Clientes>();
 		
 		String strBusca = "SELECT * "
 				+ "FROM clientes;";
@@ -230,7 +230,7 @@ public class ClientesDB {
 				while (rs.next()) {
 					m = mdb.getMunicipio(rs.getInt(2));
 					
-					c = new Cliente(
+					c = new Clientes(
 					rs.getInt(1), 
 					m,
 					rs.getString(3),
@@ -266,7 +266,7 @@ public class ClientesDB {
 	EntityNotExistException
 {
 
-	Cliente c = null;
+	Clientes c = null;
 	Municipios m = null;
 	List<String> listaDeClientes = new ArrayList<String>();
 	
@@ -282,7 +282,7 @@ public class ClientesDB {
 				m = mdb.getMunicipio(rs.getInt(2));
 				
 							
-				c = new Cliente(
+				c = new Clientes(
 				rs.getInt(1), 
 				m,
 				rs.getString(3),
@@ -312,16 +312,16 @@ public class ClientesDB {
 	return listaDeClientes;
 }	
 	
-	public List<Cliente> getClientesPorNome (String nome) throws
+	public List<Clientes> getClientesPorNome (String nome) throws
 		DataBaseGenericException, 
 		DataBaseNotConnectedException,
 		EntityTableIsEmptyException,
 		EntityNotExistException
 	{
 
-		Cliente c = null;
+		Clientes c = null;
 		Municipios m = null;
-		List<Cliente> listaDeCliente = new ArrayList<Cliente>();
+		List<Clientes> listaDeCliente = new ArrayList<Clientes>();
 		
 		String strBusca = "SELECT * "
 				+ "FROM clientes "
@@ -335,7 +335,7 @@ public class ClientesDB {
 				while (rs.next()) {
 					m = mdb.getMunicipio(rs.getInt(2));
 					
-					c = new Cliente(
+					c = new Clientes(
 					rs.getInt(1), 
 					m,
 					rs.getString(3),
@@ -366,16 +366,16 @@ public class ClientesDB {
 		return listaDeCliente;
 	}	
 
-	public List<Cliente> getClientesPorCpf (String cpf) throws
+	public List<Clientes> getClientesPorCpf (String cpf) throws
 	DataBaseGenericException, 
 	DataBaseNotConnectedException,
 	EntityTableIsEmptyException, 
 	EntityNotExistException
 {
 
-	Cliente c = null;
+	Clientes c = null;
 	Municipios m = null;
-	List<Cliente> listaDeCliente = new ArrayList<Cliente>();
+	List<Clientes> listaDeCliente = new ArrayList<Clientes>();
 	
 	String strBusca = "SELECT * "
 			+ "FROM  clientes "
@@ -389,7 +389,7 @@ public class ClientesDB {
 			while (rs.next()) {
 				m = mdb.getMunicipio(rs.getInt(2));
 				
-				c = new Cliente(
+				c = new Clientes(
 				rs.getInt(1), 
 				m,
 				rs.getString(3),
@@ -420,16 +420,16 @@ public class ClientesDB {
 	return listaDeCliente;
 }	
 	
-	public List<Cliente> getClientesPorMunicipio (String municipio) throws
+	public List<Clientes> getClientesPorMunicipio (String municipio) throws
 	DataBaseGenericException, 
 	DataBaseNotConnectedException,
 	EntityTableIsEmptyException, 
 	EntityNotExistException
 {
 
-	Cliente c = null;
+	Clientes c = null;
 	Municipios m = null;
-	List<Cliente> listaDeCliente = new ArrayList<Cliente>();
+	List<Clientes> listaDeCliente = new ArrayList<Clientes>();
 	
 	String strBusca = "SELECT *\n" + 
 			"FROM clientes as c, municipios as m\n" + 
@@ -444,7 +444,7 @@ public class ClientesDB {
 			while (rs.next()) {
 				m = mdb.getMunicipio(rs.getInt(2));
 				
-				c = new Cliente(
+				c = new Clientes(
 				rs.getInt(1), 
 				m,
 				rs.getString(3),
@@ -475,16 +475,16 @@ public class ClientesDB {
 	return listaDeCliente;
 }	
 		
-	public List<Cliente> getClientesPorEmail (String email) throws
+	public List<Clientes> getClientesPorEmail (String email) throws
 	DataBaseGenericException, 
 	DataBaseNotConnectedException,
 	EntityTableIsEmptyException, 
 	EntityNotExistException
 {
 
-	Cliente c = null;
+	Clientes c = null;
 	Municipios m = null;
-	List<Cliente> listaDeCliente = new ArrayList<Cliente>();
+	List<Clientes> listaDeCliente = new ArrayList<Clientes>();
 	
 	String strBusca = "SELECT * "
 			+ "FROM  clientes "
@@ -498,7 +498,7 @@ public class ClientesDB {
 			while (rs.next()) {
 				m = mdb.getMunicipio(rs.getInt(2));
 				
-				c = new Cliente(
+				c = new Clientes(
 				rs.getInt(1), 
 				m,
 				rs.getString(3),
@@ -529,16 +529,16 @@ public class ClientesDB {
 	return listaDeCliente;
 }	
 	
-	public List<Cliente> getClientesPorSexo (String sexo) throws
+	public List<Clientes> getClientesPorSexo (String sexo) throws
 	DataBaseGenericException, 
 	DataBaseNotConnectedException,
 	EntityTableIsEmptyException, 
 	EntityNotExistException
 {
 
-	Cliente c = null;
+	Clientes c = null;
 	Municipios m = null;
-	List<Cliente> listaDeCliente = new ArrayList<Cliente>();
+	List<Clientes> listaDeCliente = new ArrayList<Clientes>();
 	
 	String strBusca = "SELECT * "
 			+ "FROM  clientes "
@@ -552,7 +552,7 @@ public class ClientesDB {
 			while (rs.next()) {
 				m = mdb.getMunicipio(rs.getInt(2));
 				
-				c = new Cliente(
+				c = new Clientes(
 				rs.getInt(1), 
 				m,
 				rs.getString(3),
@@ -582,16 +582,16 @@ public class ClientesDB {
 	
 	return listaDeCliente;
 }	
-	public List<Cliente> getClientesPorStatus (String status) throws
+	public List<Clientes> getClientesPorStatus (String status) throws
 	DataBaseGenericException, 
 	DataBaseNotConnectedException,
 	EntityTableIsEmptyException, 
 	EntityNotExistException
 {
 
-	Cliente c = null;
+	Clientes c = null;
 	Municipios m = null;
-	List<Cliente> listaDeCliente = new ArrayList<Cliente>();
+	List<Clientes> listaDeCliente = new ArrayList<Clientes>();
 	
 	String strBusca = "SELECT * "
 			+ "FROM  clientes "
@@ -605,7 +605,7 @@ public class ClientesDB {
 			while (rs.next()) {
 				m = mdb.getMunicipio(rs.getInt(2));
 				
-				c = new Cliente(
+				c = new Clientes(
 				rs.getInt(1), 
 				m,
 				rs.getString(3),
@@ -636,16 +636,16 @@ public class ClientesDB {
 	return listaDeCliente;
 }	
 	
-	public List<Cliente> getClientesPorRG (String rg) throws
+	public List<Clientes> getClientesPorRG (String rg) throws
 	DataBaseGenericException, 
 	DataBaseNotConnectedException,
 	EntityTableIsEmptyException, 
 	EntityNotExistException
 {
 
-	Cliente c = null;
+	Clientes c = null;
 	Municipios m = null;
-	List<Cliente> listaDeCliente = new ArrayList<Cliente>();
+	List<Clientes> listaDeCliente = new ArrayList<Clientes>();
 	
 	String strBusca = "SELECT * "
 			+ "FROM  clientes "
@@ -659,7 +659,7 @@ public class ClientesDB {
 			while (rs.next()) {
 				m = mdb.getMunicipio(rs.getInt(2));
 				
-				c = new Cliente(
+				c = new Clientes(
 				rs.getInt(1), 
 				m,
 				rs.getString(3),

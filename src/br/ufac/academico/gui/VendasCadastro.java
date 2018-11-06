@@ -7,10 +7,10 @@ import br.ufac.academico.db.*;
 import br.ufac.academico.entity.Municipios;
 import br.ufac.academico.entity.Produtos;
 import br.ufac.academico.entity.Vendas;
-import br.ufac.academico.entity.Atendente;
-import br.ufac.academico.entity.Banco;
+import br.ufac.academico.entity.Atendentes;
+import br.ufac.academico.entity.Bancos;
 import br.ufac.academico.entity.CategoriasProdutos;
-import br.ufac.academico.entity.Cliente;
+import br.ufac.academico.entity.Clientes;
 import br.ufac.academico.entity.Fornecedores;
 import br.ufac.academico.exception.DataBaseGenericException;
 import br.ufac.academico.exception.DataBaseNotConnectedException;
@@ -157,11 +157,11 @@ class VendasCadastro extends JFrame {
 		public void actionPerformed(ActionEvent e) {
 
 			int venCodigo = 0;
-			Cliente cliente = null;
+			Clientes cliente = null;
 			long cliCodigo;
-			Atendente atendente=null;
+			Atendentes atendente=null;
 			long ateCodigo;
-			Banco banco = null;
+			Bancos banco = null;
 			long banCodigo;
 			float venValorTotal;
 			String venFormaPagamento;

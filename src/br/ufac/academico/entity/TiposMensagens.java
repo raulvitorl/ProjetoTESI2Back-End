@@ -1,23 +1,27 @@
 package br.ufac.academico.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
-public class TipoMensagens {
+@Table(name="tipo_mensagens")
+public class TiposMensagens {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long tmsCodigo;
+	@Column(name="tmsdescricao")
 	private String tmsDescricao;
 	
-public TipoMensagens(){
+public TiposMensagens(){
 		
 	}
 	
-	public TipoMensagens(int tmsCodigo, String tmsDescricao) {
+	public TiposMensagens(int tmsCodigo, String tmsDescricao) {
 		super();
 		this.tmsCodigo = tmsCodigo;
 		this.tmsDescricao = tmsDescricao;

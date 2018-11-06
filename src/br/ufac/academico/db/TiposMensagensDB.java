@@ -3,7 +3,7 @@ package br.ufac.academico.db;
 import java.sql.*;
 import java.util.*;
 
-import br.ufac.academico.entity.TipoMensagens;
+import br.ufac.academico.entity.TiposMensagens;
 import br.ufac.academico.exception.DataBaseGenericException;
 import br.ufac.academico.exception.DataBaseNotConnectedException;
 import br.ufac.academico.exception.EntityAlreadyExistException;
@@ -31,7 +31,7 @@ public class TiposMensagensDB {
 
 
 
-	public boolean addTipoMensagens(TipoMensagens tm) throws 
+	public boolean addTipoMensagens(TiposMensagens tm) throws 
 		DataBaseGenericException, 
 		DataBaseNotConnectedException,
 		EntityAlreadyExistException
@@ -48,13 +48,13 @@ public class TiposMensagensDB {
 		
 	}
 	
-	public TipoMensagens getTipoMensagensPorDescricao (String tipoMensagemCodigo) throws
+	public TiposMensagens getTipoMensagensPorDescricao (String tipoMensagemCodigo) throws
 		DataBaseGenericException, 
 		DataBaseNotConnectedException,
 		EntityNotExistException
 	{
 
-		TipoMensagens b = null;
+		TiposMensagens b = null;
 		
 		String strBusca = "SELECT * FROM tipo_mensagens WHERE TMS_DESCRICAO = " + tipoMensagemCodigo + "";
 		
@@ -62,7 +62,7 @@ public class TiposMensagensDB {
 		
 		try {
 			if (rs.next()) {
-				b = new TipoMensagens(rs.getInt(1), rs.getString(2)); 
+				b = new TiposMensagens(rs.getInt(1), rs.getString(2)); 
 			}else {
 				throw new EntityNotExistException("TipoMensagens (codigo='" + tipoMensagemCodigo + "')");
 			}
@@ -74,13 +74,13 @@ public class TiposMensagensDB {
 		return b;
 	}
 	
-	public TipoMensagens getTipoMensagens (long l) throws
+	public TiposMensagens getTipoMensagens (long l) throws
 	DataBaseGenericException, 
 	DataBaseNotConnectedException,
 	EntityNotExistException
 {
 
-	TipoMensagens b = null;
+	TiposMensagens b = null;
 	
 	String strBusca = "SELECT * FROM tipo_mensagens WHERE TMS_CODIGO = " + l + "";
 	
@@ -88,7 +88,7 @@ public class TiposMensagensDB {
 	
 	try {
 		if (rs.next()) {
-			b = new TipoMensagens(rs.getInt(1), rs.getString(2)); 
+			b = new TiposMensagens(rs.getInt(1), rs.getString(2)); 
 		}else {
 			throw new EntityNotExistException("TipoMensagens (codigo='" + l + "')");
 		}
@@ -100,7 +100,7 @@ public class TiposMensagensDB {
 	return b;
 }
 	
-	public boolean updTipoMensagens(TipoMensagens b) throws
+	public boolean updTipoMensagens(TiposMensagens b) throws
 		DataBaseGenericException, 
 		DataBaseNotConnectedException,
 		EntityNotExistException
@@ -117,7 +117,7 @@ public class TiposMensagensDB {
 		
 	}
 	
-	public boolean delTipoMensagens(TipoMensagens cdp) throws
+	public boolean delTipoMensagens(TiposMensagens cdp) throws
 		DataBaseGenericException, 
 		DataBaseNotConnectedException, 
 		EntityNotExistException 
@@ -132,14 +132,14 @@ public class TiposMensagensDB {
 		
 	}		
 	
-	public List<TipoMensagens> getTiposMensagens () throws
+	public List<TiposMensagens> getTiposMensagens () throws
 		DataBaseGenericException, 
 		DataBaseNotConnectedException,
 		EntityTableIsEmptyException
 	{
 
-		TipoMensagens b = null;
-		List<TipoMensagens> listaDeTipoMensagenss = new ArrayList<TipoMensagens>();
+		TiposMensagens b = null;
+		List<TiposMensagens> listaDeTipoMensagenss = new ArrayList<TiposMensagens>();
 		
 		String strBusca = "SELECT * "
 				+ "FROM tipo_mensagens;";
@@ -150,7 +150,7 @@ public class TiposMensagensDB {
 			if (rs.next()) {
 				rs.beforeFirst();
 				while (rs.next()) {
-					b = new TipoMensagens(rs.getInt(1), rs.getString(2));
+					b = new TiposMensagens(rs.getInt(1), rs.getString(2));
 					listaDeTipoMensagenss.add(b);
 				}
 			}else {
@@ -170,7 +170,7 @@ public class TiposMensagensDB {
 	EntityTableIsEmptyException
 {
 
-	TipoMensagens b = null;
+	TiposMensagens b = null;
 	List<String> listaNomesDeTipoMensagens = new ArrayList<String>();
 	
 	String strBusca = "SELECT *"
@@ -182,7 +182,7 @@ public class TiposMensagensDB {
 		if (rs.next()) {
 			rs.beforeFirst();
 			while (rs.next()) {
-				b = new TipoMensagens(rs.getInt(1),rs.getString(2));
+				b = new TiposMensagens(rs.getInt(1),rs.getString(2));
 				listaNomesDeTipoMensagens.add(b.getTmsDescricao());
 			}
 		}else {

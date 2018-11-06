@@ -1,30 +1,37 @@
 package br.ufac.academico.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="mensagens")
 public class Mensagens {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long men_codigo;
-	Atendente men_ate_codigo;
-	TipoMensagens men_tms_codigo;
+	@Column(name="men_ate_codigo")
+	Atendentes men_ate_codigo;
+	@Column(name="men_tms_codigo")
+	TiposMensagens men_tms_codigo;
+	@Column(name="men_texto")
 	String men_texto;
+	@Column(name="men_data_envio")
 	String men_data_envio;
-	public Atendente getMen_ate_codigo() {
+	public Atendentes getMen_ate_codigo() {
 		return men_ate_codigo;
 	}
-	public void setMen_ate_codigo(Atendente men_ate_codigo) {
+	public void setMen_ate_codigo(Atendentes men_ate_codigo) {
 		this.men_ate_codigo = men_ate_codigo;
 	}
-	public TipoMensagens getMen_tms_codigo() {
+	public TiposMensagens getMen_tms_codigo() {
 		return men_tms_codigo;
 	}
-	public void setMen_tms_codigo(TipoMensagens men_tms_codigo) {
+	public void setMen_tms_codigo(TiposMensagens men_tms_codigo) {
 		this.men_tms_codigo = men_tms_codigo;
 	}
 	public String getMen_texto() {
@@ -50,7 +57,7 @@ public class Mensagens {
 	
 	
 	
-	public Mensagens(long men_codigo, Atendente men_ate_codigo, TipoMensagens men_tms_codigo, String men_texto,
+	public Mensagens(long men_codigo, Atendentes men_ate_codigo, TiposMensagens men_tms_codigo, String men_texto,
 			String men_data_envio) {
 		super();
 		this.men_codigo = men_codigo;

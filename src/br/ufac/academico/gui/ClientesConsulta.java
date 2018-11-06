@@ -3,7 +3,7 @@ package br.ufac.academico.gui;
 import javax.swing.*; 					//importando classes do Swing
 
 import br.ufac.academico.db.*;
-import br.ufac.academico.entity.Cliente;
+import br.ufac.academico.entity.Clientes;
 import br.ufac.academico.exception.DataBaseGenericException;
 import br.ufac.academico.exception.DataBaseNotConnectedException;
 import br.ufac.academico.exception.EntityNotExistException;
@@ -245,7 +245,7 @@ class ClientesConsulta extends JFrame {
 
 	public void buscar() {
 
-		List<Cliente> listaDeClientes = new ArrayList<Cliente>();
+		List<Clientes> listaDeClientes = new ArrayList<Clientes>();
 		int busca;
 
 		try {

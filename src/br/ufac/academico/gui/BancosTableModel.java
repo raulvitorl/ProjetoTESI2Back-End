@@ -7,9 +7,9 @@ import java.util.*;
 @SuppressWarnings("serial")
 public class BancosTableModel extends AbstractTableModel{
 
-	List<Banco> listBancos;
+	List<Bancos> listBancos;
 
-	public BancosTableModel(List<Banco> bancos){
+	public BancosTableModel(List<Bancos> bancos){
 		this.listBancos = bancos;
 	}
 	
@@ -25,7 +25,7 @@ public class BancosTableModel extends AbstractTableModel{
 	@Override	
 	public Object getValueAt(int rowIndex, int columnIndex) {		
 
-		Banco b;
+		Bancos b;
 		Object dado = null;
 		
 		b = listBancos.get(rowIndex);

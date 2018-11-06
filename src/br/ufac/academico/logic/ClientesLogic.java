@@ -77,12 +77,12 @@ public class ClientesLogic {
 		}
 
 
-		Cliente c = new Cliente(codigo, m, nome, dataNascimento, sexo, cpf, rg, cnpj, endereco, email, dataCadastro, tipo, status, fone, nomeContato);
+		Clientes c = new Clientes(codigo, m, nome, dataNascimento, sexo, cpf, rg, cnpj, endereco, email, dataCadastro, tipo, status, fone, nomeContato);
 		return cdb.addCliente(c);
 
 	}
 
-	public Cliente getCliente(long cliCodigo) throws
+	public Clientes getCliente(long cliCodigo) throws
 	DataBaseGenericException,
 	DataBaseNotConnectedException,
 	EntityNotExistException 
@@ -92,7 +92,7 @@ public class ClientesLogic {
 
 	}
 
-	public Cliente getClientePorNome(String nome) throws
+	public Clientes getClientePorNome(String nome) throws
 	DataBaseGenericException,
 	DataBaseNotConnectedException,
 	EntityNotExistException 
@@ -153,7 +153,7 @@ public class ClientesLogic {
 		}
 
 
-		Cliente c = new Cliente(codigo, m, nome, dataNascimento, sexo, cpf, rg, cnpj, endereco, email, dataCadastro, tipo, status, fone, nomeContato);
+		Clientes c = new Clientes(codigo, m, nome, dataNascimento, sexo, cpf, rg, cnpj, endereco, email, dataCadastro, tipo, status, fone, nomeContato);
 		return cdb.updCliente(c);
 
 	}
@@ -168,13 +168,13 @@ public class ClientesLogic {
 		
 		Municipios municipio = ml.getMunicipio(cliMunCodigo);		
 
-		Cliente c = new Cliente(codigo, municipio, nome, dataNascimento, sexo, cpf, rg, cnpj, endereco, email, dataCadastro, tipo, status, fone, nomeContato);
+		Clientes c = new Clientes(codigo, municipio, nome, dataNascimento, sexo, cpf, rg, cnpj, endereco, email, dataCadastro, tipo, status, fone, nomeContato);
 
 		return cdb.delClientes(c);
 
 	}
 
-	public List<Cliente> getClientes() throws
+	public List<Clientes> getClientes() throws
 		DataBaseGenericException, 
 		DataBaseNotConnectedException, 
 		EntityTableIsEmptyException, 
@@ -192,7 +192,7 @@ public class ClientesLogic {
 	return cdb.getNomesClientes();
 }
 
-	public List<Cliente> getClientesPorNome(String nome) throws
+	public List<Clientes> getClientesPorNome(String nome) throws
 		DataBaseGenericException, 
 		DataBaseNotConnectedException, 
 		EntityTableIsEmptyException, 
@@ -201,7 +201,7 @@ public class ClientesLogic {
 		return cdb.getClientesPorNome(nome);
 	}
 	
-	public List<Cliente> getClientesPorCpf(String cnpj) throws
+	public List<Clientes> getClientesPorCpf(String cnpj) throws
 	DataBaseGenericException, 
 	DataBaseNotConnectedException, 
 	EntityTableIsEmptyException, 
@@ -210,7 +210,7 @@ public class ClientesLogic {
 	return cdb.getClientesPorCpf(cnpj);
 }
 	
-	public List<Cliente> getClientesPorMunicipio(String municipio) throws
+	public List<Clientes> getClientesPorMunicipio(String municipio) throws
 	DataBaseGenericException, 
 	DataBaseNotConnectedException, 
 	EntityTableIsEmptyException, 
@@ -219,7 +219,7 @@ public class ClientesLogic {
 	return cdb.getClientesPorMunicipio(municipio);
 }
 
-	public List<Cliente> getClientesPorEmail(String municipio) throws
+	public List<Clientes> getClientesPorEmail(String municipio) throws
 	DataBaseGenericException, 
 	DataBaseNotConnectedException, 
 	EntityTableIsEmptyException, 
@@ -228,7 +228,7 @@ public class ClientesLogic {
 	return cdb.getClientesPorEmail(municipio);
 }
 
-	public List<Cliente> getClientesPorSexo(String municipio) throws
+	public List<Clientes> getClientesPorSexo(String municipio) throws
 	DataBaseGenericException, 
 	DataBaseNotConnectedException, 
 	EntityTableIsEmptyException, 
@@ -237,7 +237,7 @@ public class ClientesLogic {
 	return cdb.getClientesPorSexo(municipio);
 }
 
-	public List<Cliente> getClientesPorStatus(String municipio) throws
+	public List<Clientes> getClientesPorStatus(String municipio) throws
 	DataBaseGenericException, 
 	DataBaseNotConnectedException, 
 	EntityTableIsEmptyException, 
@@ -246,7 +246,7 @@ public class ClientesLogic {
 	return cdb.getClientesPorStatus(municipio);
 }
 
-	public List<Cliente> getClientesPorRg(String municipio) throws
+	public List<Clientes> getClientesPorRg(String municipio) throws
 	DataBaseGenericException, 
 	DataBaseNotConnectedException, 
 	EntityTableIsEmptyException, 

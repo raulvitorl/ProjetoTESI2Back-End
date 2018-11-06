@@ -1,24 +1,28 @@
 package br.ufac.academico.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
-public class Banco {
+@Table(name="bancos")
+public class Bancos {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long codigo;
+	@Column(name="ban_nome")
 	private String nome;
 	
-	public Banco(int codigo, String nome) {
+	public Bancos(int codigo, String nome) {
 		this.codigo = codigo;
 		this.nome = nome;
 	}
 	
-	public Banco(){
+	public Bancos(){
 		
 	}
 

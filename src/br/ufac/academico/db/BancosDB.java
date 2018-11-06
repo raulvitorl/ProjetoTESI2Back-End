@@ -3,7 +3,7 @@ package br.ufac.academico.db;
 import java.sql.*;
 import java.util.*;
 
-import br.ufac.academico.entity.Banco;
+import br.ufac.academico.entity.Bancos;
 import br.ufac.academico.exception.DataBaseGenericException;
 import br.ufac.academico.exception.DataBaseNotConnectedException;
 import br.ufac.academico.exception.EntityAlreadyExistException;
@@ -27,7 +27,7 @@ public class BancosDB {
 		this.cnx = cnx;
 	}
 
-	public boolean addBanco(Banco b) throws 
+	public boolean addBanco(Bancos b) throws 
 		DataBaseGenericException, 
 		DataBaseNotConnectedException,
 		EntityAlreadyExistException
@@ -44,13 +44,13 @@ public class BancosDB {
 		
 	}
 	
-	public Banco getBancoPorNome (String nome) throws
+	public Bancos getBancoPorNome (String nome) throws
 		DataBaseGenericException, 
 		DataBaseNotConnectedException,
 		EntityNotExistException
 	{
 
-		Banco b = null;
+		Bancos b = null;
 		
 		String strBusca = "SELECT * FROM bancos WHERE BAN_NOME = " + nome + "";
 		
@@ -58,7 +58,7 @@ public class BancosDB {
 		
 		try {
 			if (rs.next()) {
-				b = new Banco(rs.getInt(1), rs.getString(2)); 
+				b = new Bancos(rs.getInt(1), rs.getString(2)); 
 			}else {
 				throw new EntityNotExistException("Banco (nome='" + nome + "')");
 			}
@@ -71,13 +71,13 @@ public class BancosDB {
 	}
 
 	
-	public Banco getBanco (long l) throws
+	public Bancos getBanco (long l) throws
 	DataBaseGenericException, 
 	DataBaseNotConnectedException,
 	EntityNotExistException
 {
 
-	Banco b = null;
+	Bancos b = null;
 	
 	String strBusca = "SELECT * FROM bancos WHERE BAN_CODIGO = " + l + "";
 	
@@ -85,7 +85,7 @@ public class BancosDB {
 	
 	try {
 		if (rs.next()) {
-			b = new Banco(rs.getInt(1), rs.getString(2)); 
+			b = new Bancos(rs.getInt(1), rs.getString(2)); 
 		}else {
 			throw new EntityNotExistException("Banco (codigo='" + l + "')");
 		}
@@ -98,7 +98,7 @@ public class BancosDB {
 }
 	
 	
-	public boolean updBanco(Banco b) throws
+	public boolean updBanco(Bancos b) throws
 		DataBaseGenericException, 
 		DataBaseNotConnectedException,
 		EntityNotExistException
@@ -115,7 +115,7 @@ public class BancosDB {
 		
 	}
 	
-	public boolean delBanco(Banco cdp) throws
+	public boolean delBanco(Bancos cdp) throws
 		DataBaseGenericException, 
 		DataBaseNotConnectedException, 
 		EntityNotExistException 
@@ -130,14 +130,14 @@ public class BancosDB {
 		
 	}		
 	
-	public List<Banco> getBancos () throws
+	public List<Bancos> getBancos () throws
 		DataBaseGenericException, 
 		DataBaseNotConnectedException,
 		EntityTableIsEmptyException
 	{
 
-		Banco b = null;
-		List<Banco> listaDeBancos = new ArrayList<Banco>();
+		Bancos b = null;
+		List<Bancos> listaDeBancos = new ArrayList<Bancos>();
 		
 		String strBusca = "SELECT * "
 				+ "FROM bancos;";
@@ -148,7 +148,7 @@ public class BancosDB {
 			if (rs.next()) {
 				rs.beforeFirst();
 				while (rs.next()) {
-					b = new Banco(rs.getInt(1), rs.getString(2));
+					b = new Bancos(rs.getInt(1), rs.getString(2));
 					listaDeBancos.add(b);
 				}
 			}else {
@@ -162,14 +162,14 @@ public class BancosDB {
 		return listaDeBancos;
 	}	
 	
-	public List<Banco> getBancosPorNome (String banNome) throws
+	public List<Bancos> getBancosPorNome (String banNome) throws
 		DataBaseGenericException, 
 		DataBaseNotConnectedException,
 		EntityTableIsEmptyException
 	{
 
-		Banco b = null;
-		List<Banco> listaDeBancos = new ArrayList<Banco>();
+		Bancos b = null;
+		List<Bancos> listaDeBancos = new ArrayList<Bancos>();
 		
 		String strBusca = "SELECT *"
 				+ "FROM bancos "
@@ -181,7 +181,7 @@ public class BancosDB {
 			if (rs.next()) {
 				rs.beforeFirst();
 				while (rs.next()) {
-					b = new Banco(rs.getInt(1),rs.getString(2));
+					b = new Bancos(rs.getInt(1),rs.getString(2));
 					listaDeBancos.add(b);
 				}
 			}else {
@@ -202,7 +202,7 @@ public class BancosDB {
 	EntityTableIsEmptyException
 {
 
-	Banco b = null;
+	Bancos b = null;
 	List<String> listaNomesDeBancos = new ArrayList<String>();
 	
 	String strBusca = "SELECT *"
@@ -214,7 +214,7 @@ public class BancosDB {
 		if (rs.next()) {
 			rs.beforeFirst();
 			while (rs.next()) {
-				b = new Banco(rs.getInt(1),rs.getString(2));
+				b = new Bancos(rs.getInt(1),rs.getString(2));
 				listaNomesDeBancos.add(b.getNome());
 			}
 		}else {

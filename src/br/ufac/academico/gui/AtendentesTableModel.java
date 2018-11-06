@@ -7,9 +7,9 @@ import java.util.*;
 @SuppressWarnings("serial")
 public class AtendentesTableModel extends AbstractTableModel{
 
-	List<Atendente> atendentes;
+	List<Atendentes> atendentes;
 
-	public AtendentesTableModel(List<Atendente> atendentes){
+	public AtendentesTableModel(List<Atendentes> atendentes){
 		this.atendentes = atendentes;
 	}
 	
@@ -25,7 +25,7 @@ public class AtendentesTableModel extends AbstractTableModel{
 	@Override	
 	public Object getValueAt(int rowIndex, int columnIndex) {		
 
-		Atendente a;
+		Atendentes a;
 		Object dado = null;
 		
 		a = atendentes.get(rowIndex);

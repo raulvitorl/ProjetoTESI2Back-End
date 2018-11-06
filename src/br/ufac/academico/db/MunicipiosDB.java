@@ -3,7 +3,7 @@ package br.ufac.academico.db;
 import java.sql.*;
 import java.util.*;
 
-import br.ufac.academico.entity.Cliente;
+import br.ufac.academico.entity.Clientes;
 import br.ufac.academico.entity.Municipios;
 import br.ufac.academico.exception.DataBaseGenericException;
 import br.ufac.academico.exception.DataBaseNotConnectedException;

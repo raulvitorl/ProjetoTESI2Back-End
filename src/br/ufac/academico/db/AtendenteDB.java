@@ -3,7 +3,7 @@ package br.ufac.academico.db;
 import java.sql.*;
 import java.util.*;
 
-import br.ufac.academico.entity.Atendente;
+import br.ufac.academico.entity.Atendentes;
 import br.ufac.academico.exception.DataBaseGenericException;
 import br.ufac.academico.exception.DataBaseNotConnectedException;
 import br.ufac.academico.exception.EntityAlreadyExistException;
@@ -26,7 +26,7 @@ public class AtendenteDB {
 		
 	}
 
-	public boolean addAtendente(Atendente a) throws 
+	public boolean addAtendente(Atendentes a) throws 
 		DataBaseGenericException, 
 		DataBaseNotConnectedException,
 		EntityAlreadyExistException
@@ -50,13 +50,13 @@ public class AtendenteDB {
 		
 	}
 	
-	public Atendente getAtendente (long l) throws
+	public Atendentes getAtendente (long l) throws
 		DataBaseGenericException, 
 		DataBaseNotConnectedException,
 		EntityNotExistException
 	{
 
-		Atendente a = null;
+		Atendentes a = null;
 		
 		String strBusca = "SELECT * "
 				+ "FROM atendentes "
@@ -66,7 +66,7 @@ public class AtendenteDB {
 		
 		try {
 			if (rs.next()) {
-				a = new Atendente(
+				a = new Atendentes(
 						rs.getInt(1),
 						rs.getString(2), 
 						rs.getString(3),
@@ -85,13 +85,13 @@ public class AtendenteDB {
 		return a;
 	}
 	
-	public Atendente getAtendentePorNome (String nome) throws
+	public Atendentes getAtendentePorNome (String nome) throws
 	DataBaseGenericException, 
 	DataBaseNotConnectedException,
 	EntityNotExistException
 {
 
-	Atendente a = null;
+	Atendentes a = null;
 	
 	String strBusca = "SELECT * "
 			+ "FROM atendentes "
@@ -101,7 +101,7 @@ public class AtendenteDB {
 	
 	try {
 		if (rs.next()) {
-			a = new Atendente(
+			a = new Atendentes(
 					rs.getInt(1),
 					rs.getString(2), 
 					rs.getString(3),
@@ -121,7 +121,7 @@ public class AtendenteDB {
 }
 	
 	
-	public boolean updAtendente(Atendente a) throws
+	public boolean updAtendente(Atendentes a) throws
 		DataBaseGenericException, 
 		DataBaseNotConnectedException,
 		EntityNotExistException
@@ -142,7 +142,7 @@ public class AtendenteDB {
 		
 	}
 	
-	public boolean delAtendente(Atendente a) throws
+	public boolean delAtendente(Atendentes a) throws
 		DataBaseGenericException, 
 		DataBaseNotConnectedException, 
 		EntityNotExistException 
@@ -157,14 +157,14 @@ public class AtendenteDB {
 		
 	}		
 	
-	public List<Atendente> getAtendentes () throws
+	public List<Atendentes> getAtendentes () throws
 		DataBaseGenericException, 
 		DataBaseNotConnectedException,
 		EntityTableIsEmptyException
 	{
 
-		Atendente a = null;
-		List<Atendente> listaAtendentes = new ArrayList<Atendente>();
+		Atendentes a = null;
+		List<Atendentes> listaAtendentes = new ArrayList<Atendentes>();
 		
 		String strBusca = "SELECT * "
 				+ "FROM atendentes;";
@@ -175,7 +175,7 @@ public class AtendenteDB {
 			if (rs.next()) {
 				rs.beforeFirst();
 				while (rs.next()) {
-					a = new Atendente(
+					a = new Atendentes(
 							rs.getInt(1),
 							rs.getString(2), 
 							rs.getString(3),
@@ -202,7 +202,7 @@ public class AtendenteDB {
 	EntityTableIsEmptyException
 {
 
-	Atendente a = null;
+	Atendentes a = null;
 	List<String> listaDeNomes = new ArrayList<String>();
 	
 	String strBusca = "SELECT * "
@@ -214,7 +214,7 @@ public class AtendenteDB {
 		if (rs.next()) {
 			rs.beforeFirst();
 			while (rs.next()) {
-				a = new Atendente(
+				a = new Atendentes(
 						rs.getInt(1),
 						rs.getString(2), 
 						rs.getString(3),
@@ -235,14 +235,14 @@ public class AtendenteDB {
 	return listaDeNomes;
 }	
 	
-	public List<Atendente> getAtendentesPorNome (String nome) throws
+	public List<Atendentes> getAtendentesPorNome (String nome) throws
 		DataBaseGenericException, 
 		DataBaseNotConnectedException,
 		EntityTableIsEmptyException
 	{
 
-		Atendente a = null;
-		List<Atendente> listaDeAtendentes = new ArrayList<Atendente>();
+		Atendentes a = null;
+		List<Atendentes> listaDeAtendentes = new ArrayList<Atendentes>();
 		
 		String strBusca = "SELECT * "
 				+ "FROM atendentes "
@@ -254,7 +254,7 @@ public class AtendenteDB {
 			if (rs.next()) {
 				rs.beforeFirst();
 				while (rs.next()) {
-					a = new Atendente(
+					a = new Atendentes(
 							rs.getInt(1),
 							rs.getString(2), 
 							rs.getString(3),

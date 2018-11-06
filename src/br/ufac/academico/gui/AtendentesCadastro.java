@@ -5,7 +5,7 @@ import javax.swing.text.DefaultFormatterFactory;
 import javax.swing.text.MaskFormatter;
 
 import br.ufac.academico.db.*;
-import br.ufac.academico.entity.Atendente;
+import br.ufac.academico.entity.Atendentes;
 import br.ufac.academico.entity.Municipios;
 import br.ufac.academico.exception.DataBaseGenericException;
 import br.ufac.academico.exception.DataBaseNotConnectedException;
@@ -225,7 +225,7 @@ class AtendentesCadastro extends JFrame {
 
 	public void carregarCampos(int codigo) {
 
-		Atendente a;
+		Atendentes a;
 		try {
 			a = al.getAtendente(codigo);
 			fldCodigo.setText(String.valueOf(a.getCodigo()));

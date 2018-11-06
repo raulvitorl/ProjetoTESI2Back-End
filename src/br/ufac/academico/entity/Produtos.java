@@ -1,24 +1,35 @@
 package br.ufac.academico.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="produtos")
 public class Produtos {
 
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long proCodigo;
+	@Column(name="pro_for_codigo")
 	private Fornecedores fornecedor;
+	@Column(name="pro_cat_ccodigo")
 	private CategoriasProdutos categoria;
+	@Column(name="pro_descricao")
 	private String proDescricao;
+	@Column(name="pro_qnt_disponivel")
 	private int proQntDisponivel;
+	@Column(name="pro_ultima_aquisicao")
 	private String proUltimaAquisicao;
+	@Column(name="pro_valor_unit")
 	private float proValorUnitario;
+	@Column(name="pro_fabricante")
 	private String proFabricante;
+	@Column(name="pro_detalhes")
 	private String proDetalhes;
 	
 

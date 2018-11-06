@@ -50,11 +50,11 @@ public class AtendentesLogic {
 			throw new InvalidFieldException("Atendentes", camposInvalidos);
 		}			
 		
-		Atendente a = new Atendente(codigo, nome, ultimoAcesso, ramal, email, status);
+		Atendentes a = new Atendentes(codigo, nome, ultimoAcesso, ramal, email, status);
 		return adb.addAtendente(a);
 		
 	}
-	public Atendente getAtendente(long ateCodigo) throws
+	public Atendentes getAtendente(long ateCodigo) throws
 	DataBaseGenericException,
 	DataBaseNotConnectedException,
 	EntityNotExistException 
@@ -94,7 +94,7 @@ public class AtendentesLogic {
 			throw new InvalidFieldException("Atendentes", camposInvalidos);
 		}			
 		
-		Atendente a = new Atendente(codigo, nome, ultimoAcesso, ramal, email, status);
+		Atendentes a = new Atendentes(codigo, nome, ultimoAcesso, ramal, email, status);
 		return adb.updAtendente(a);
 	}
 	
@@ -104,11 +104,11 @@ public class AtendentesLogic {
 		DataBaseNotConnectedException, 
 		EntityNotExistException 
 	{
-		Atendente a = new Atendente(codigo, nome, ultimoAcesso, ramal, email, status);
+		Atendentes a = new Atendentes(codigo, nome, ultimoAcesso, ramal, email, status);
 		return adb.delAtendente(a);
 	}
 	
-	public List<Atendente> getAtendentes() throws
+	public List<Atendentes> getAtendentes() throws
 		DataBaseGenericException,
 		DataBaseNotConnectedException, 
 		EntityTableIsEmptyException
@@ -117,7 +117,7 @@ public class AtendentesLogic {
 	}
 	
 	
-	public Atendente getAtendentePorNome(String nome) throws
+	public Atendentes getAtendentePorNome(String nome) throws
 	DataBaseGenericException,
 	DataBaseNotConnectedException, 
 	EntityTableIsEmptyException, 
@@ -134,7 +134,7 @@ public class AtendentesLogic {
 	return adb.getNomesAtendentes();
 }
 		
-	public List<Atendente> getAtendentesPorNome(String nome) throws
+	public List<Atendentes> getAtendentesPorNome(String nome) throws
 		DataBaseGenericException,
 		DataBaseNotConnectedException,
 		EntityTableIsEmptyException

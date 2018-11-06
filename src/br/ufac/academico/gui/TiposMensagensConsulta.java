@@ -3,7 +3,7 @@ package br.ufac.academico.gui;
 import javax.swing.*; 					//importando classes do Swing
 
 import br.ufac.academico.db.*;
-import br.ufac.academico.entity.TipoMensagens;
+import br.ufac.academico.entity.TiposMensagens;
 import br.ufac.academico.exception.DataBaseGenericException;
 import br.ufac.academico.exception.DataBaseNotConnectedException;
 import br.ufac.academico.exception.EntityNotExistException;
@@ -207,7 +207,7 @@ class TiposMensagensConsulta extends JFrame {
 
 	public void buscar() {
 
-		List<TipoMensagens> listaDeTipos = new ArrayList<TipoMensagens>();
+		List<TiposMensagens> listaDeTipos = new ArrayList<TiposMensagens>();
 		try {
 			if(fldValor.getText().equals("")) {
 				listaDeTipos = bl.getTiposMensagens();

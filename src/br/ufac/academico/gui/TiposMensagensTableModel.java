@@ -7,9 +7,9 @@ import java.util.*;
 @SuppressWarnings("serial")
 public class TiposMensagensTableModel extends AbstractTableModel{
 
-	List<TipoMensagens> listTipoMensagens;
+	List<TiposMensagens> listTipoMensagens;
 
-	public TiposMensagensTableModel(List<TipoMensagens> TipoMensagenss){
+	public TiposMensagensTableModel(List<TiposMensagens> TipoMensagenss){
 		this.listTipoMensagens = TipoMensagenss;
 	}
 	
@@ -25,7 +25,7 @@ public class TiposMensagensTableModel extends AbstractTableModel{
 	@Override	
 	public Object getValueAt(int rowIndex, int columnIndex) {		
 
-		TipoMensagens tm;
+		TiposMensagens tm;
 		Object dado = null;
 		
 		tm = listTipoMensagens.get(rowIndex);

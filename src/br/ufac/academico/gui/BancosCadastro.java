@@ -3,7 +3,7 @@ package br.ufac.academico.gui;
 import javax.swing.*; 					//importando classes do Swing
 
 import br.ufac.academico.db.*;
-import br.ufac.academico.entity.Banco;
+import br.ufac.academico.entity.Bancos;
 import br.ufac.academico.exception.DataBaseGenericException;
 import br.ufac.academico.exception.DataBaseNotConnectedException;
 import br.ufac.academico.exception.EntityAlreadyExistException;
@@ -196,7 +196,7 @@ class BancosCadastro extends JFrame {
 
 	public void carregarCampos(int codigo) {
 
-		Banco b;
+		Bancos b;
 		try {
 			b = bl.getBanco(codigo);
 			fldBanCodigo.setText(String.valueOf(b.getCodigo()));

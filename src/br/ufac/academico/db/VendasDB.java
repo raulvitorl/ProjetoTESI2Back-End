@@ -2,9 +2,9 @@ package br.ufac.academico.db;
 
 import java.sql.*;
 import java.util.*;
-import br.ufac.academico.entity.Atendente;
-import br.ufac.academico.entity.Banco;
-import br.ufac.academico.entity.Cliente;
+import br.ufac.academico.entity.Atendentes;
+import br.ufac.academico.entity.Bancos;
+import br.ufac.academico.entity.Clientes;
 import br.ufac.academico.entity.Vendas;
 import br.ufac.academico.exception.DataBaseGenericException;
 import br.ufac.academico.exception.DataBaseNotConnectedException;
@@ -56,9 +56,9 @@ public class VendasDB {
 	{
 
 		Vendas v = null;
-		Cliente c = null;
-		Atendente a = null;
-		Banco b = null;
+		Clientes c = null;
+		Atendentes a = null;
+		Bancos b = null;
 		
 		String strBusca = "SELECT * "
 				+ "FROM vendas "
@@ -137,9 +137,9 @@ public class VendasDB {
 	{
 
 		Vendas v = null;
-		Cliente c = null;
-		Atendente a = null;
-		Banco b = null;
+		Clientes c = null;
+		Atendentes a = null;
+		Bancos b = null;
 		
 		List<Vendas> listaDeVendas = new ArrayList<Vendas>();
 		
@@ -187,9 +187,9 @@ public class VendasDB {
 	{
 
 		Vendas v = null;
-		Cliente c = null;
-		Atendente a = null;
-		Banco b = null;
+		Clientes c = null;
+		Atendentes a = null;
+		Bancos b = null;
 		List<Vendas> listaDeVendas = new ArrayList<Vendas>();
 		
 		String strBusca = "select * from " + 
@@ -237,9 +237,9 @@ public class VendasDB {
 {
 
 	Vendas v = null;
-	Cliente c = null;
-	Atendente a = null;
-	Banco b = null;
+	Clientes c = null;
+	Atendentes a = null;
+	Bancos b = null;
 	List<Vendas> listaDeVendas = new ArrayList<Vendas>();
 	
 	String strBusca = "select * from " + 
@@ -287,9 +287,9 @@ public class VendasDB {
 {
 
 	Vendas v = null;
-	Cliente c = null;
-	Atendente a = null;
-	Banco b = null;
+	Clientes c = null;
+	Atendentes a = null;
+	Bancos b = null;
 	List<Vendas> listaDeVendas = new ArrayList<Vendas>();
 	
 	String strBusca = "select * from " + 
@@ -337,9 +337,9 @@ public class VendasDB {
 {
 
 	Vendas v = null;
-	Cliente c = null;
-	Atendente a = null;
-	Banco b = null;
+	Clientes c = null;
+	Atendentes a = null;
+	Bancos b = null;
 	List<Vendas> listaDeVendas = new ArrayList<Vendas>();
 	
 	String strBusca = "select * from " + 
@@ -387,9 +387,9 @@ public class VendasDB {
 {
 
 	Vendas v = null;
-	Cliente c = null;
-	Atendente a = null;
-	Banco b = null;
+	Clientes c = null;
+	Atendentes a = null;
+	Bancos b = null;
 	List<Vendas> listaDeVendas = new ArrayList<Vendas>();
 	
 	String strBusca = "select * from " + 
@@ -437,9 +437,9 @@ public class VendasDB {
 {
 
 	Vendas v = null;
-	Cliente c = null;
-	Atendente a = null;
-	Banco b = null;
+	Clientes c = null;
+	Atendentes a = null;
+	Bancos b = null;
 	List<Vendas> listaDeVendas = new ArrayList<Vendas>();
 	
 	String strBusca = "select * from " + 
