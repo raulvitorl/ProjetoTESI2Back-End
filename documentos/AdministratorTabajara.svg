@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg height="799" version="1.1" width="1383" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#ffffff" height="122" stroke="#ffffff" stroke-width="1" width="240" x="38" y="14"/>
+<rect fill="none" height="122" stroke="#000000" stroke-width="1" width="240" x="38" y="14"/>
+<text font-family="Dialog" font-size="12" x="123" y="28">
+MUNICIPIOS</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="240" x="38" y="38"/>
+<text font-family="Dialog" font-size="12" x="42" y="53">
+mun_nome : String</text>
+<text font-family="Dialog" font-size="12" x="42" y="70">
+mun_uf_estado : String</text>
+<text font-family="Dialog" font-size="12" x="42" y="87">
+mun_cep : String</text>
+<text font-family="Dialog" font-size="12" x="42" y="104">
+mun_codigo : Integer</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="240" x="38" y="114"/>
+<rect fill="#ffffff" height="245" stroke="#ffffff" stroke-width="1" width="177" x="430" y="14"/>
+<rect fill="none" height="245" stroke="#000000" stroke-width="1" width="177" x="430" y="14"/>
+<text font-family="Dialog" font-size="12" x="467" y="28">
+FORNECEDORES</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="177" x="430" y="38"/>
+<text font-family="Dialog" font-size="12" x="434" y="53">
+for_codigo : Integer</text>
+<text font-family="Dialog" font-size="12" x="434" y="70">
+for_mun_codigo : MUNICIPIOS</text>
+<text font-family="Dialog" font-size="12" x="434" y="87">
+for_razao_social : String</text>
+<text font-family="Dialog" font-size="12" x="434" y="104">
+for_nome_contato : String</text>
+<text font-family="Dialog" font-size="12" x="434" y="121">
+for_nome_fantasia : String</text>
+<text font-family="Dialog" font-size="12" x="434" y="138">
+for_cnpj : String</text>
+<text font-family="Dialog" font-size="12" x="434" y="155">
+for_endereco : String</text>
+<text font-family="Dialog" font-size="12" x="434" y="172">
+for_data_cadastro : String</text>
+<text font-family="Dialog" font-size="12" x="434" y="189">
+for_fone : String</text>
+<text font-family="Dialog" font-size="12" x="434" y="206">
+for_email : String</text>
+<text font-family="Dialog" font-size="12" x="434" y="223">
+for_website : String</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="177" x="430" y="235"/>
+<polyline fill="none" points="277,110 430,110" stroke="#000000" stroke-width="1"/>
+<text font-family="Dialog" font-size="12" x="309" y="90">
+POSSUEM</text>
+<text font-family="Dialog" font-size="12" x="296" y="126">
+1</text>
+<text font-family="Dialog" font-size="12" x="400" y="125">
+N</text>
+<rect fill="#ffffff" height="173" stroke="#ffffff" stroke-width="1" width="183" x="430" y="350"/>
+<rect fill="none" height="173" stroke="#000000" stroke-width="1" width="183" x="430" y="350"/>
+<text font-family="Dialog" font-size="12" x="497" y="364">
+VENDAS</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="183" x="430" y="374"/>
+<text font-family="Dialog" font-size="12" x="434" y="389">
+ven_codigo : Integer</text>
+<text font-family="Dialog" font-size="12" x="434" y="406">
+ven_cli_codigo : CLIENTES</text>
+<text font-family="Dialog" font-size="12" x="434" y="423">
+ven_ate_odigo : Integer</text>
+<text font-family="Dialog" font-size="12" x="434" y="440">
+ven_ban_codigo : BANCOS</text>
+<text font-family="Dialog" font-size="12" x="434" y="457">
+ven_valor_total : Float</text>
+<text font-family="Dialog" font-size="12" x="434" y="474">
+ven_forma_pagamento : String</text>
+<text font-family="Dialog" font-size="12" x="434" y="491">
+ven_observacoes : String</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="183" x="430" y="501"/>
+<rect fill="#ffffff" height="88" stroke="#ffffff" stroke-width="1" width="120" x="454" y="598"/>
+<rect fill="none" height="88" stroke="#000000" stroke-width="1" width="120" x="454" y="598"/>
+<text font-family="Dialog" font-size="12" x="489" y="612">
+BANCOS</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="120" x="454" y="622"/>
+<text font-family="Dialog" font-size="12" x="458" y="637">
+ban_codigo : Integer</text>
+<text font-family="Dialog" font-size="12" x="458" y="654">
+ban_nome : String</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="120" x="454" y="664"/>
+<polyline fill="none" points="501,598 501,522" stroke="#000000" stroke-width="1"/>
+<text font-family="Dialog" font-size="12" x="409" y="565">
+PROCESSAM</text>
+<text font-family="Dialog" font-size="12" x="515" y="570">
+1</text>
+<text font-family="Dialog" font-size="12" x="514" y="542">
+N</text>
+<rect fill="#ffffff" height="258" stroke="#ffffff" stroke-width="1" width="264" x="14" y="310"/>
+<rect fill="none" height="258" stroke="#000000" stroke-width="1" width="264" x="14" y="310"/>
+<text font-family="Dialog" font-size="12" x="116" y="324">
+CLIENTES</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="264" x="14" y="334"/>
+<text font-family="Dialog" font-size="12" x="18" y="349">
+cli_codigo : Integer</text>
+<text font-family="Dialog" font-size="12" x="18" y="366">
+cli_mun_codigo : MUNICIPIOS</text>
+<text font-family="Dialog" font-size="12" x="18" y="383">
+cli_nome : String</text>
+<text font-family="Dialog" font-size="12" x="18" y="400">
+cli_data_nascimento : String</text>
+<text font-family="Dialog" font-size="12" x="18" y="417">
+cli_sexo : String</text>
+<text font-family="Dialog" font-size="12" x="18" y="434">
+cli_endereco : String</text>
+<text font-family="Dialog" font-size="12" x="18" y="451">
+cli_email : String</text>
+<text font-family="Dialog" font-size="12" x="18" y="468">
+cli_data_cadastrto : String</text>
+<text font-family="Dialog" font-size="12" x="18" y="485">
+cli_tipo : String</text>
+<text font-family="Dialog" font-size="12" x="18" y="502">
+cli_status : String</text>
+<text font-family="Dialog" font-size="12" x="18" y="519">
+cli_fone : String</text>
+<text font-family="Dialog" font-size="12" x="18" y="536">
+cli_nome_contato : String</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="264" x="14" y="546"/>
+<polyline fill="none" points="270,135 270,310" stroke="#000000" stroke-width="1"/>
+<text font-family="Dialog" font-size="12" x="273" y="227">
+POSSUEM</text>
+<text font-family="Dialog" font-size="12" x="246" y="155">
+1</text>
+<text font-family="Dialog" font-size="12" x="245" y="282">
+N</text>
+<polyline fill="none" points="430,454 277,454" stroke="#000000" stroke-width="1"/>
+<text font-family="Dialog" font-size="12" x="310" y="434">
+VINCULAM</text>
+<text font-family="Dialog" font-size="12" x="400" y="469">
+N</text>
+<text font-family="Dialog" font-size="12" x="296" y="469">
+1</text>
+<rect fill="#ffffff" height="207" stroke="#ffffff" stroke-width="1" width="175" x="830" y="22"/>
+<rect fill="none" height="207" stroke="#000000" stroke-width="1" width="175" x="830" y="22"/>
+<text font-family="Dialog" font-size="12" x="883" y="36">
+PRODUTOS</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="175" x="830" y="46"/>
+<text font-family="Dialog" font-size="12" x="834" y="61">
+pro_codigo : Integer</text>
+<text font-family="Dialog" font-size="12" x="834" y="78">
+pro_for_codigo : Integer</text>
+<text font-family="Dialog" font-size="12" x="834" y="95">
+pro_cat_codigo : Integer</text>
+<text font-family="Dialog" font-size="12" x="834" y="112">
+pro_ultima_aquisicao : String</text>
+<text font-family="Dialog" font-size="12" x="834" y="129">
+pro_descricao : String</text>
+<text font-family="Dialog" font-size="12" x="834" y="146">
+pro_qnt_disponivel : Integer</text>
+<text font-family="Dialog" font-size="12" x="834" y="163">
+pro_fabricante : String</text>
+<text font-family="Dialog" font-size="12" x="834" y="180">
+pro_valor_unit : Float</text>
+<text font-family="Dialog" font-size="12" x="834" y="197">
+pro_detalhes : String</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="175" x="830" y="207"/>
+<polyline fill="none" points="612,350 830,228" stroke="#000000" stroke-width="1"/>
+<text font-family="Dialog" font-size="12" x="660" y="267">
+INCLUEM</text>
+<text font-family="Dialog" font-size="12" x="643" y="353">
+N</text>
+<text font-family="Dialog" font-size="12" x="810" y="260">
+N</text>
+<polyline fill="none" points="606,86 830,86" stroke="#000000" stroke-width="1"/>
+<text font-family="Dialog" font-size="12" x="674" y="66">
+FORNECEM</text>
+<text font-family="Dialog" font-size="12" x="625" y="101">
+1</text>
+<text font-family="Dialog" font-size="12" x="800" y="101">
+N</text>
+<rect fill="#ffffff" height="105" stroke="#ffffff" stroke-width="1" width="163" x="1206" y="62"/>
+<rect fill="none" height="105" stroke="#000000" stroke-width="1" width="163" x="1206" y="62"/>
+<text font-family="Dialog" font-size="12" x="1212" y="76">
+CATEGORIAS_PRODUTOS</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="163" x="1206" y="86"/>
+<text font-family="Dialog" font-size="12" x="1210" y="101">
+cat_codigo : Integer</text>
+<text font-family="Dialog" font-size="12" x="1210" y="118">
+cat_identificador : Integer</text>
+<text font-family="Dialog" font-size="12" x="1210" y="135">
+cat_descricao : String</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="163" x="1206" y="145"/>
+<polyline fill="none" points="1206,102 1004,102" stroke="#000000" stroke-width="1"/>
+<text font-family="Dialog" font-size="12" x="1061" y="82">
+ENGLOBA</text>
+<text font-family="Dialog" font-size="12" x="1177" y="117">
+1</text>
+<text font-family="Dialog" font-size="12" x="1022" y="117">
+N</text>
+<rect fill="#ffffff" height="76" stroke="#ffffff" stroke-width="1" width="123" x="14" y="614"/>
+<rect fill="none" height="76" stroke="#000000" stroke-width="1" width="123" x="14" y="614"/>
+<text font-family="Dialog" font-size="12" x="19" y="628">
+CLIENTES_FISICOS</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="123" x="14" y="638"/>
+<text font-family="Dialog" font-size="12" x="18" y="653">
+cli_cpf : String</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="123" x="14" y="665"/>
+<rect fill="#ffffff" height="71" stroke="#ffffff" stroke-width="1" width="148" x="190" y="614"/>
+<rect fill="none" height="71" stroke="#000000" stroke-width="1" width="148" x="190" y="614"/>
+<text font-family="Dialog" font-size="12" x="195" y="628">
+CLLIENTES_JURIDICOS</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="148" x="190" y="638"/>
+<text font-family="Dialog" font-size="12" x="194" y="653">
+cli_cnpj : String</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="148" x="190" y="663"/>
+<rect fill="#ffffff" height="207" stroke="#ffffff" stroke-width="1" width="161" x="822" y="326"/>
+<rect fill="none" height="207" stroke="#000000" stroke-width="1" width="161" x="822" y="326"/>
+<text font-family="Dialog" font-size="12" x="862" y="340">
+ATENDENTES</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="161" x="822" y="350"/>
+<text font-family="Dialog" font-size="12" x="826" y="365">
+ate_codigo : Integer</text>
+<text font-family="Dialog" font-size="12" x="826" y="382">
+ate_nome : String</text>
+<text font-family="Dialog" font-size="12" x="826" y="399">
+ate_ultimo_acesso : String</text>
+<text font-family="Dialog" font-size="12" x="826" y="416">
+ate_ramal : Integer</text>
+<text font-family="Dialog" font-size="12" x="826" y="433">
+ate_email : String</text>
+<text font-family="Dialog" font-size="12" x="826" y="450">
+ate_perfil : Integer</text>
+<text font-family="Dialog" font-size="12" x="826" y="467">
+ate_status : String</text>
+<text font-family="Dialog" font-size="12" x="826" y="484">
+ate_cpf : String</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="161" x="822" y="502"/>
+<polyline fill="none" points="822,430 612,430" stroke="#000000" stroke-width="1"/>
+<text font-family="Dialog" font-size="12" x="673" y="410">
+REALIZAM</text>
+<text font-family="Dialog" font-size="12" x="793" y="445">
+1</text>
+<text font-family="Dialog" font-size="12" x="630" y="445">
+N</text>
+<rect fill="#ffffff" height="139" stroke="#ffffff" stroke-width="1" width="152" x="814" y="646"/>
+<rect fill="none" height="139" stroke="#000000" stroke-width="1" width="152" x="814" y="646"/>
+<text font-family="Dialog" font-size="12" x="852" y="660">
+MENSAGENS</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="152" x="814" y="670"/>
+<text font-family="Dialog" font-size="12" x="818" y="685">
+men_codigo : Integer</text>
+<text font-family="Dialog" font-size="12" x="818" y="702">
+men_ate_codigo : Integer</text>
+<text font-family="Dialog" font-size="12" x="818" y="719">
+men_tms_codigo : Integer</text>
+<text font-family="Dialog" font-size="12" x="818" y="736">
+men_data_envio : Integer</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="152" x="814" y="754"/>
+<polyline fill="none" points="886,532 886,646" stroke="#000000" stroke-width="1"/>
+<text font-family="Dialog" font-size="12" x="889" y="594">
+ENVIAM</text>
+<text font-family="Dialog" font-size="12" x="862" y="552">
+1</text>
+<text font-family="Dialog" font-size="12" x="861" y="618">
+N</text>
+<rect fill="#ffffff" height="105" stroke="#ffffff" stroke-width="1" width="131" x="1166" y="662"/>
+<rect fill="none" height="105" stroke="#000000" stroke-width="1" width="131" x="1166" y="662"/>
+<text font-family="Dialog" font-size="12" x="1173" y="676">
+TIPOS_MENSAGENS</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="131" x="1166" y="686"/>
+<text font-family="Dialog" font-size="12" x="1170" y="701">
+tms_codigo : Integer</text>
+<text font-family="Dialog" font-size="12" x="1170" y="718">
+tms_desricao : String</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="131" x="1166" y="736"/>
+<polyline fill="none" points="1166,702 965,702" stroke="#000000" stroke-width="1"/>
+<text font-family="Dialog" font-size="12" x="1022" y="682">
+PERTENCEM</text>
+<text font-family="Dialog" font-size="12" x="1137" y="717">
+1</text>
+<text font-family="Dialog" font-size="12" x="983" y="717">
+N</text>
+<polyline fill="none" points="78,567 78,614" stroke="#000000" stroke-width="1"/>
+<polygon fill="#ffffff" points="78,614 71,602 85,602" stroke="#ffffff" stroke-width="1"/>
+<polygon fill="none" points="78,614 71,602 85,602" stroke="#000000" stroke-width="1"/>
+<polyline fill="none" points="254,567 254,614" stroke="#000000" stroke-width="1"/>
+<polygon fill="#ffffff" points="254,614 247,602 261,602" stroke="#ffffff" stroke-width="1"/>
+<polygon fill="none" points="254,614 247,602 261,602" stroke="#000000" stroke-width="1"/>
+</svg>
