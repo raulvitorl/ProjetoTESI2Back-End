@@ -11,13 +11,25 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="municipios")
-public class Municipios {
 
+//Consultas que serão realizadas no repositório
+@NamedQueries({
+	//Essa named querry retorna todos os Atendentes,
+	//e vai ser chamada de dentro do repositório
+	@NamedQuery(name="Municipios.todos", 
+		query="SELECT m FROM Municipios m"),
+	
+	@NamedQuery(name="Municipios.todosPorNome", 
+		query="SELECT m FROM Municipios m ORDER BY m.mun_nome")
+})
+public class Municipios {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 private long mun_codigo;
@@ -30,14 +42,9 @@ private String  munCep;
 
 @OneToMany(mappedBy = "for_mun_codigo", targetEntity = Fornecedores.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 private Collection<Fornecedores> fornecedores;
-
 @OneToMany(mappedBy = "cli_mun_codigo", targetEntity = Clientes.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 private Collection<Clientes> clientes;
-
-public Municipios(){
-	
-}
-
+public Municipios(){}
 
 public long getMunCodigo() {return mun_codigo;}
 
@@ -53,16 +60,4 @@ public void setMunUfEstado(String munUfEstado) {this.munUfEstado = munUfEstado;}
 
 public String getMunCep() {return munCep;}
 
-public void setMunCep(String munCep) {this.munCep = munCep;}
-
-
-
-
-
-
-
-
-
-
-
-}
+public void setMunCep(String munCep) {this.munCep = munCep;}}

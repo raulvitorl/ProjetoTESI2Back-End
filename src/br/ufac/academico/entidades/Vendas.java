@@ -55,7 +55,7 @@ public class Vendas {
 			String venFormaPagamento, String venObservacoes) {
 		super();
 		this.ven_codigo = venCodigo;
-		//this.ven_cli_codigo = cliente;
+		this.ven_cli_codigo = cliente;
 		this.ven_ate_codigo = atendente;
 		this.ven_ban_codigo = banco;
 		this.ven_valor_total = venValorTotal;

@@ -8,6 +8,16 @@ import javax.persistence.*;
 @Entity
 @Inheritance(strategy=InheritanceType.JOINED)
 @DiscriminatorColumn(name="tipo")
+//Consultas que serão realizadas no repositório
+@NamedQueries({
+	//Essa named querry retorna todos os Atendentes,
+	//e vai ser chamada de dentro do repositório
+	@NamedQuery(name="Clientes.todos", 
+		query="SELECT c FROM Clientes c"),
+	
+	@NamedQuery(name="Clientes.todosPorNome", 
+		query="SELECT c FROM Clientes c ORDER BY c.nome")
+})
 public abstract class Clientes {
 
 	@Id
@@ -113,11 +123,5 @@ public abstract class Clientes {
 	public void setCli_nome_contato(String cli_nome_contato) {
 		this.cli_nome_contato = cli_nome_contato;
 	}
-	
-	
-	
-	
-	
-	
 	
 }

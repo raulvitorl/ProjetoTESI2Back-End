@@ -9,11 +9,23 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="tipo_mensagens")
+//Consultas que serão realizadas no repositório
+@NamedQueries({
+	//Essa named querry retorna todos os Atendentes,
+	//e vai ser chamada de dentro do repositório
+	@NamedQuery(name="TiposMensagens.todos", 
+		query="SELECT tms FROM TiposMensagens tms"),
+	
+	@NamedQuery(name="TiposMensagens.todosPorDescricao", 
+		query="SELECT tms FROM TiposMensagens tms ORDER BY tms.tmsdescricao")
+})
 public class TiposMensagens {
 	
 	@Id

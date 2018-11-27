@@ -12,16 +12,28 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="fornecedores")
+//Consultas que serão realizadas no repositório
+@NamedQueries({
+	//Essa named querry retorna todos os Atendentes,
+	//e vai ser chamada de dentro do repositório
+	@NamedQuery(name="Fornecedores.todos", 
+		query="SELECT f FROM Fornecedores c"),
+	
+	@NamedQuery(name="Fornecedores.todosPorNome", 
+		query="SELECT f FROM Fornecedores f ORDER BY f.for_nome_contato")
+})
 public class Fornecedores {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long forCodigo;
 	@Column(name="for_razao_social")
 	private String forRazaoSocial;

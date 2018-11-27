@@ -2,22 +2,29 @@ package br.ufac.academico.entidades;
 
 import java.util.Collection;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-
+import javax.persistence.*;
 @Entity
 @Table(name="categorias_produtos")
+//Consultas que serão realizadas no repositório
+@NamedQueries({
+	//Essa named querry retorna todos os Atendentes,
+	//e vai ser chamada de dentro do repositório
+	@NamedQuery(name="CategoriasProudutos.todos", 
+	query="SELECT cp FROM CategoriasProudutos cp"),
+
+	@NamedQuery(name="CategoriasProudutos.todosPorNome", 
+	query="SELECT CategoriasProudutos.catDescricao FROM CategoriasProudutos cp ORDER BY cp.nome"),
+	
+	@NamedQuery(name="Bancos.todos", 
+	query="SELECT b FROM Bancos b"),
+
+	@NamedQuery(name="Bancos.todosPorNome", 
+	query="SELECT b FROM Bancos b ORDER BY b.nome")
+})
 public class CategoriasProdutos {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long catCodigo;
 	@Column(name="cat_identificador")
 	private int catIdentificador;

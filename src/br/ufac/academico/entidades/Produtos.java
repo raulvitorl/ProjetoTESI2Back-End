@@ -11,15 +11,28 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="produtos")
+
+//Consultas que serão realizadas no repositório
+@NamedQueries({
+	//Essa named querry retorna todos os Atendentes,
+	//e vai ser chamada de dentro do repositório
+	@NamedQuery(name="Produtos.todos", 
+		query="SELECT p FROM Produtos p"),
+	
+	@NamedQuery(name="Produtos.todosPorDescricao", 
+		query="SELECT p FROM Produtos p ORDER BY p.pro_descricao")
+})
 public class Produtos {
 
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long proCodigo;
 	@Column(name="pro_descricao")
 	private String proDescricao;
