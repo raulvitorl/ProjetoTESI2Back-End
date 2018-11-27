@@ -26,7 +26,7 @@ import javax.persistence.Table;
 		query="SELECT p FROM Produtos p"),
 	
 	@NamedQuery(name="Produtos.todosPorDescricao", 
-		query="SELECT p FROM Produtos p ORDER BY p.pro_descricao")
+		query="SELECT p FROM Produtos p ORDER BY p.proDescricao")
 })
 public class Produtos {
 

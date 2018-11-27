@@ -24,7 +24,7 @@ import javax.persistence.Table;
 		query="SELECT tms FROM TiposMensagens tms"),
 	
 	@NamedQuery(name="TiposMensagens.todosPorDescricao", 
-		query="SELECT tms FROM TiposMensagens tms ORDER BY tms.tmsdescricao")
+		query="SELECT tms FROM TiposMensagens tms ORDER BY tms.tmsDescricao")
 })
 public class TiposMensagens {
 	

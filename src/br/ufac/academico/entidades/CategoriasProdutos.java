@@ -10,16 +10,10 @@ import javax.persistence.*;
 	//Essa named querry retorna todos os Atendentes,
 	//e vai ser chamada de dentro do repositório
 	@NamedQuery(name="CategoriasProudutos.todos", 
-	query="SELECT cp FROM CategoriasProudutos cp"),
+	query="SELECT cp FROM CategoriasProdutos cp"),
 
 	@NamedQuery(name="CategoriasProudutos.todosPorNome", 
-	query="SELECT CategoriasProudutos.catDescricao FROM CategoriasProudutos cp ORDER BY cp.nome"),
-	
-	@NamedQuery(name="Bancos.todos", 
-	query="SELECT b FROM Bancos b"),
-
-	@NamedQuery(name="Bancos.todosPorNome", 
-	query="SELECT b FROM Bancos b ORDER BY b.nome")
+	query="SELECT cp.catDescricao FROM CategoriasProdutos cp ORDER BY cp.catDescricao"),
 })
 public class CategoriasProdutos {
 	

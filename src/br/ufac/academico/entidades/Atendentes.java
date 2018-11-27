@@ -80,4 +80,5 @@ public class Atendentes {
 	
 	public void setStatus(char status){this.status = status;}
 
+	
 }

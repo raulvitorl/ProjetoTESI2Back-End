@@ -27,7 +27,7 @@ import javax.persistence.Table;
 		query="SELECT m FROM Municipios m"),
 	
 	@NamedQuery(name="Municipios.todosPorNome", 
-		query="SELECT m FROM Municipios m ORDER BY m.mun_nome")
+		query="SELECT m FROM Municipios m ORDER BY m.munNome")
 })
 public class Municipios {
 	@Id

@@ -14,9 +14,9 @@ public class BancosRepositorio {
 		em = emf.createEntityManager();
 	}
 
-	public void adicionar(Bancos atendente) {	
+	public void adicionar(Bancos banco) {	
 		em.getTransaction().begin();
-		em.persist(atendente);
+		em.persist(banco);
 		em.getTransaction().commit();
 		
 	}
@@ -48,6 +48,12 @@ public class BancosRepositorio {
 		Query query = em.createNamedQuery("Bancos.todosPorNome");
 		return query.getResultList();
 		
+	}
+	
+	public List<Bancos> recuperarTodosPorNomeContendo(String termo){
+		return em.createNamedQuery("Bancos.todosPorNomeContendo")
+				.setParameter("termo", "%"+termo+"%")
+				.getResultList();
 	}
 
 	

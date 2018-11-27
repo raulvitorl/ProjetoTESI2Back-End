@@ -25,10 +25,10 @@ import javax.persistence.Table;
 	//Essa named querry retorna todos os Atendentes,
 	//e vai ser chamada de dentro do repositório
 	@NamedQuery(name="Fornecedores.todos", 
-		query="SELECT f FROM Fornecedores c"),
+		query="SELECT f FROM Fornecedores f"),
 	
 	@NamedQuery(name="Fornecedores.todosPorNome", 
-		query="SELECT f FROM Fornecedores f ORDER BY f.for_nome_contato")
+		query="SELECT f FROM Fornecedores f ORDER BY f.forNomeContato")
 })
 public class Fornecedores {
 	

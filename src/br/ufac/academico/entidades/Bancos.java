@@ -13,12 +13,15 @@ import javax.persistence.*;
 	query="SELECT b FROM Bancos b"),
 
 	@NamedQuery(name="Bancos.todosPorNome", 
-	query="SELECT b FROM Bancos b ORDER BY b.nome")
+	query="SELECT b FROM Bancos b ORDER BY b.nome"),
+	
+	@NamedQuery(name="Bancos.todosPorNomeContendo",
+	query="SELECT b FROM Bancos b WHERE b.nome LIKE :termo ORDER BY b.nome")
 })
 public class Bancos {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long codigo;
 	@Column(name="ban_nome")
 	private String nome;
@@ -26,7 +29,7 @@ public class Bancos {
 	@OneToMany(mappedBy = "ven_ban_codigo", targetEntity = Vendas.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private Collection<Vendas> vendas;
 
-	public Bancos(int codigo, String nome) {
+	public Bancos(long codigo, String nome) {
 		this.codigo = codigo;
 		this.nome = nome;
 	}
@@ -54,5 +57,19 @@ public class Bancos {
 	public String toString() {
 		return nome; 
 	}
+
+	public Collection<Vendas> getVendas() {
+		return vendas;
+	}
+
+	public void setVendas(Collection<Vendas> vendas) {
+		this.vendas = vendas;
+	}
+
+	public void setCodigo(long codigo) {
+		this.codigo = codigo;
+	}
+	
+	
 
 }
