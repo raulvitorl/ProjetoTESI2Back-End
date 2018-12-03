@@ -4,37 +4,33 @@ package br.ufac.academico.entidades;
 import java.util.Collection;
 import javax.persistence.*;
 @Entity
-@Table(name="bancos")
-//Consultas que serão realizadas no repositório
 @NamedQueries({
-	//Essa named querry retorna todos os Atendentes,
-	//e vai ser chamada de dentro do repositório
 	@NamedQuery(name="Bancos.todos", 
-	query="SELECT b FROM Bancos b"),
-
+	query="SELECT b FROM Banco b"),
 	@NamedQuery(name="Bancos.todosPorNome", 
-	query="SELECT b FROM Bancos b ORDER BY b.nome"),
-	
+	query="SELECT b FROM Banco b ORDER BY b.nome"),
 	@NamedQuery(name="Bancos.todosPorNomeContendo",
-	query="SELECT b FROM Bancos b WHERE b.nome LIKE :termo ORDER BY b.nome")
+	query="SELECT b FROM Banco b WHERE b.nome LIKE :termo ORDER BY b.nome")
 })
-public class Bancos {
+@Table(name="bancos")
+//Consultas que serão realizadas no repositóri
+public class Banco {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long codigo;
-	@Column(name="ban_nome")
+	@Column(name="nome")
 	private String nome;
 
-	@OneToMany(mappedBy = "ven_ban_codigo", targetEntity = Vendas.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	private Collection<Vendas> vendas;
+	@OneToMany(mappedBy = "banco", targetEntity = Venda.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	private Collection<Venda> vendas;
 
-	public Bancos(long codigo, String nome) {
+	public Banco(long codigo, String nome) {
 		this.codigo = codigo;
 		this.nome = nome;
 	}
 
-	public Bancos(){
+	public Banco(){
 
 	}
 
@@ -58,11 +54,11 @@ public class Bancos {
 		return nome; 
 	}
 
-	public Collection<Vendas> getVendas() {
+	public Collection<Venda> getVendas() {
 		return vendas;
 	}
 
-	public void setVendas(Collection<Vendas> vendas) {
+	public void setVendas(Collection<Venda> vendas) {
 		this.vendas = vendas;
 	}
 

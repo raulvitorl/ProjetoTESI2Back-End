@@ -2,58 +2,62 @@ package br.ufac.academico.repositorios;
 
 import java.util.*;
 import javax.persistence.*;
+import javax.swing.JOptionPane;
+
 import br.ufac.academico.entidades.*;
 
-public class AtendentesRepositorio {
+public class ClientesRepositorio {
 
 	private EntityManagerFactory emf;
 	private EntityManager em;	
 	
-	public AtendentesRepositorio() {
+	public ClientesRepositorio() {
 		emf = Persistence.createEntityManagerFactory("AcademicoJPA");
 		em = emf.createEntityManager();
 	}
+	
+	
 
-	public void adicionar(Atendente atendente) {	
+	public void adicionar(Cliente cliente) {
+		
 		em.getTransaction().begin();
-		em.persist(atendente);
+		em.persist(cliente);
 		em.getTransaction().commit();
 		
 	}
 	
-	public Atendente recuperar(long id) {
-		return em.find(Atendente.class, id);
+	public Cliente recuperar(long id) {
+		return em.find(Cliente.class, id);
 	}
 	
-	public void atualizar (Atendente Atendentes) {
+	public void atualizar (Cliente Clientes) {
 		em.getTransaction().begin();
-		em.merge(Atendentes);
+		em.merge(Clientes);
 		em.getTransaction().commit();
 	}
 	
-	public void remover(Atendente Atendentes) {
+	public void remover(Cliente Clientes) {
 		em.getTransaction().begin();
-		em.remove(Atendentes);
+		em.remove(Clientes);
 		em.getTransaction().commit();
 		
 	}
 	
-	public List<Atendente> recuperarTodos(){
-		Query query = em.createNamedQuery("Atendentes.todos");
+	public List<Cliente> recuperarTodos(){
+		Query query = em.createNamedQuery("Clientes.todos");
 		return query.getResultList();
 		
 	}
 
-	public List<Atendente> recuperarTodosPorNome(){
-		Query query = em.createNamedQuery("Atendentes.todosPorNome");
+	public List<Cliente> recuperarTodosPorNome(){
+		Query query = em.createNamedQuery("Clientes.todosPorNome");
 		return query.getResultList();
 		
 	}
 
-	
 	public void encerrar() {
 		em.close();
 		emf.close();
 	}
-	
+		
 }

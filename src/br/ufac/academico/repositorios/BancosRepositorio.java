@@ -14,48 +14,47 @@ public class BancosRepositorio {
 		em = emf.createEntityManager();
 	}
 
-	public void adicionar(Bancos banco) {	
+	public void adicionar(Banco banco) {	
 		em.getTransaction().begin();
 		em.persist(banco);
 		em.getTransaction().commit();
 		
 	}
 	
-	public Bancos recuperar(long id) {
-		return em.find(Bancos.class, id);
+	public Banco recuperar(long id) {
+		return em.find(Banco.class, id);
 	}
 	
-	public void atualizar (Bancos Bancos) {
+	public void atualizar (Banco Bancos) {
 		em.getTransaction().begin();
 		em.merge(Bancos);
 		em.getTransaction().commit();
 	}
 	
-	public void remover(Bancos Bancos) {
+	public void remover(Banco Bancos) {
 		em.getTransaction().begin();
 		em.remove(Bancos);
 		em.getTransaction().commit();
 		
 	}
 	
-	public List<Bancos> recuperarTodos(){
+	public List<Banco> recuperarTodos(){
 		Query query = em.createNamedQuery("Bancos.todos");
 		return query.getResultList();
 		
 	}
 
-	public List<Bancos> recuperarTodosPorNome(){
+	public List<Banco> recuperarTodosPorNome(){
 		Query query = em.createNamedQuery("Bancos.todosPorNome");
 		return query.getResultList();
 		
 	}
 	
-	public List<Bancos> recuperarTodosPorNomeContendo(String termo){
+	public List<Banco> recuperarTodosPorNomeContendo(String termo){
 		return em.createNamedQuery("Bancos.todosPorNomeContendo")
 				.setParameter("termo", "%"+termo+"%")
 				.getResultList();
 	}
-
 	
 	public void encerrar() {
 		em.close();

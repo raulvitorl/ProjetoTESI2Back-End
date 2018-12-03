@@ -4,53 +4,52 @@ import java.util.*;
 import javax.persistence.*;
 import br.ufac.academico.entidades.*;
 
-public class AtendentesRepositorio {
+public class MunicipiosRepositorio {
 
 	private EntityManagerFactory emf;
 	private EntityManager em;	
 	
-	public AtendentesRepositorio() {
+	public MunicipiosRepositorio() {
 		emf = Persistence.createEntityManagerFactory("AcademicoJPA");
 		em = emf.createEntityManager();
 	}
 
-	public void adicionar(Atendente atendente) {	
+	public void adicionar(Municipio banco) {	
 		em.getTransaction().begin();
-		em.persist(atendente);
+		em.persist(banco);
 		em.getTransaction().commit();
 		
 	}
 	
-	public Atendente recuperar(long id) {
-		return em.find(Atendente.class, id);
+	public Municipio recuperar(long id) {
+		return em.find(Municipio.class, id);
 	}
 	
-	public void atualizar (Atendente Atendentes) {
+	public void atualizar (Municipio Municipios) {
 		em.getTransaction().begin();
-		em.merge(Atendentes);
+		em.merge(Municipios);
 		em.getTransaction().commit();
 	}
 	
-	public void remover(Atendente Atendentes) {
+	public void remover(Municipio Municipios) {
 		em.getTransaction().begin();
-		em.remove(Atendentes);
+		em.remove(Municipios);
 		em.getTransaction().commit();
 		
 	}
 	
-	public List<Atendente> recuperarTodos(){
-		Query query = em.createNamedQuery("Atendentes.todos");
+	public List<Municipio> recuperarTodos(){
+		Query query = em.createNamedQuery("Municipios.todos");
 		return query.getResultList();
 		
 	}
 
-	public List<Atendente> recuperarTodosPorNome(){
-		Query query = em.createNamedQuery("Atendentes.todosPorNome");
+	public List<Municipio> recuperarTodosPorNome(){
+		Query query = em.createNamedQuery("Municipios.todosPorNome");
 		return query.getResultList();
 		
 	}
 
-	
 	public void encerrar() {
 		em.close();
 		emf.close();

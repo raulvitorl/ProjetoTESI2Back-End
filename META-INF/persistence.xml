@@ -1,18 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" 
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+<persistence version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
-	<persistence-unit name="AcademicoJPA" transaction-type="RESOURCE_LOCAL">
+	<persistence-unit name="AcademicoJPA"
+		transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<class>br.ufac.academico.entidades.Atendentes</class>
+		<class>br.ufac.academico.entidades.Bancos</class>
+		<class>br.ufac.academico.entidades.CategoriasProdutos</class>
+		<class>br.ufac.academico.entidades.Clientes</class>
+		<class>br.ufac.academico.entidades.Fornecedores</class>
+		<class>br.ufac.academico.entidades.Mensagens</class>
+		<class>br.ufac.academico.entidades.Municipios</class>
+		<class>br.ufac.academico.entidades.Produtos</class>
+		<class>br.ufac.academico.entidades.TiposMensagens</class>
+		<class>br.ufac.academico.entidades.Vendas</class>
 		<properties>
-			<property name="javax.persistence.jdbc.url" 		value="jdbc:mysql://localhost:3306/academico"/>
-			<property name="javax.persistence.jdbc.user" 		value="root"/>
-			<property name="javax.persistence.jdbc.password" 	value="12345"/>
-			<property name="javax.persistence.jdbc.driver" 		value="com.mysql.jdbc.Driver"/>
-			<property name="hibernate.dialect" 					value="org.hibernate.dialect.MySQL5InnoDBDialect"/>
-			<property name="hibernate.hbm2ddl.auto" 			value="update"/>
-			<property name="hibernate.show_sql" 				value="false"/>
-			<property name="hibernate.format_sql" 				value="false"/>			
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:mysql://localhost:3306/academico" />
+			<property name="javax.persistence.jdbc.user" value="root" />
+			<property name="javax.persistence.jdbc.password"
+				value="12345" />
+			<property name="javax.persistence.jdbc.driver"
+				value="com.mysql.jdbc.Driver" />
+			<property name="hibernate.dialect"
+				value="org.hibernate.dialect.MySQL5InnoDBDialect" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.show_sql" value="false" />
+			<property name="hibernate.format_sql" value="false" />
 		</properties>
 	</persistence-unit>
 </persistence>
