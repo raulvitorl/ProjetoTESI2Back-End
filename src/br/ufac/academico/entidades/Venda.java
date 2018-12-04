@@ -11,10 +11,20 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="vendas")
+//Consultas que serão realizadas no repositório
+@NamedQueries({
+	//Essa named querry retorna todos os Atendentes,
+	//e vai ser chamada de dentro do repositório
+	@NamedQuery(name="Vendas.todos", 
+		query="SELECT v FROM Venda v")
+})
+
 public class Venda {
 	
 	@Id
