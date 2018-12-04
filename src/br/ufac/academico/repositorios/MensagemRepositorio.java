@@ -4,12 +4,12 @@ import java.util.*;
 import javax.persistence.*;
 import br.ufac.academico.entidades.*;
 
-public class MensagensRepositorio {
+public class MensagemRepositorio {
 
 	private EntityManagerFactory emf;
 	private EntityManager em;	
 	
-	public MensagensRepositorio() {
+	public MensagemRepositorio() {
 		emf = Persistence.createEntityManagerFactory("AcademicoJPA");
 		em = emf.createEntityManager();
 	}

@@ -5,13 +5,13 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 import br.ufac.academico.entidades.Banco;
-import br.ufac.academico.repositorios.BancosRepositorio;
+import br.ufac.academico.repositorios.BancoRepositorio;
 
 public class BancoTeste {
 	
 	public static void main(String[] args) {
 		
-		BancosRepositorio br = new BancosRepositorio();
+		BancoRepositorio br = new BancoRepositorio();
 		List<Banco> bancos;
 		Banco b1,b2,b3;
 		
@@ -53,6 +53,7 @@ public class BancoTeste {
 		if(bancos.isEmpty()){
 			System.out.println("Todos os registros foram excluidos");
 		}
+		
 		
 		
 		

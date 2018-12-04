@@ -5,13 +5,13 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 import br.ufac.academico.entidades.Atendente;
-import br.ufac.academico.repositorios.AtendentesRepositorio;
+import br.ufac.academico.repositorios.AtendenteRepositorio;
 
 public class AtendenteTeste {
 	
 	public static void main(String[] args) {
 		
-		AtendentesRepositorio ar = new AtendentesRepositorio();
+		AtendenteRepositorio ar = new AtendenteRepositorio();
 		List<Atendente> atendentes;
 		Atendente a1,a2,a3;
 		
