@@ -72,7 +72,7 @@ public void setClientes(Collection<Cliente> clientes) {
 @Override
 public String toString() {
 	return "Municipios [codigo=" + codigo + ", nome=" + nome + ", UfEstado=" + UfEstado + ", cep=" + cep
-			+ ", fornecedores=" + fornecedores + ", clientes=" + clientes + "]";
+			;
 }
 
 

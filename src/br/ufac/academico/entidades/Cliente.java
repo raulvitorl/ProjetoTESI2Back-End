@@ -1,7 +1,7 @@
 package br.ufac.academico.entidades;
 
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Date;
 import java.util.Collection;
 
 import javax.persistence.*;
@@ -158,6 +158,16 @@ public class Cliente implements Serializable{
 		this.vendas = vendas;
 	}
 
+	@Override
+	public String toString() {
+		return "Cliente [codigo=" + codigo + ", municipio=" + municipio + ", nome=" + nome + ", nascimento="
+				+ nascimento + ", sexo=" + sexo + ", endereco=" + endereco + ", email=" + email + ", cadastro="
+				+ cadastro + ", tipo=" + tipo + ", status=" + status + ", fone=" + fone + ", contato=" + contato
+				+ ", cpf=" + cpf + "]";
+	}
+
+	
+	
 	
 
 }
