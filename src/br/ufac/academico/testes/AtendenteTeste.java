@@ -48,7 +48,7 @@ public class AtendenteTeste {
 		ar.adicionar(a3);
 		
 		atendentes = ar.recuperarTodos();
-		System.out.println("Teste de listagem");
+		System.out.println("TESTE DE LISTAGEM");
 		for(Atendente atendente: atendentes){
 			System.out.println(atendente);
 		}
@@ -56,7 +56,7 @@ public class AtendenteTeste {
 		JOptionPane.showMessageDialog(null, "Confira se os dados foram gerados no banco");
 		JOptionPane.showMessageDialog(null, "Agora eles serão excluidos");
 		atendentes = ar.recuperarTodos();
-		System.out.println("Teste de listagem");
+		System.out.println("Teste de exclusão");
 		for(Atendente atendente: atendentes){
 			ar.remover(atendente);
 		}

@@ -38,9 +38,6 @@ public class Banco {
 		return codigo;
 	}
 
-	public void setCodigo(int codigo) {
-		this.codigo = codigo;
-	}
 
 	public String getNome() {
 		return nome;
@@ -48,10 +45,6 @@ public class Banco {
 
 	public void setNome(String nome) {
 		this.nome = nome;
-	}
-
-	public String toString() {
-		return nome; 
 	}
 
 	public Collection<Venda> getVendas() {
@@ -65,6 +58,12 @@ public class Banco {
 	public void setCodigo(long codigo) {
 		this.codigo = codigo;
 	}
+
+	@Override
+	public String toString() {
+		return "Banco [codigo=" + codigo + ", nome=" + nome + "]";
+	}
+
 	
 	
 
