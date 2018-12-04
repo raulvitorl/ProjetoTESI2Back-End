@@ -48,7 +48,7 @@ public class Produto {
 	private String detalhes;
 
 	@ManyToMany(mappedBy="produtos")
-	private Collection<Venda> produtos;
+	private Collection<Venda> vendas;
 	
 	@ManyToOne(cascade={CascadeType.ALL})
 	@JoinColumn(name="pro_for_codigo")	
@@ -134,14 +134,6 @@ public void setDetalhes(String detalhes) {
 }
 
 
-public Collection<Venda> getProdutos() {
-	return produtos;
-}
-
-
-public void setProdutos(Collection<Venda> produtos) {
-	this.produtos = produtos;
-}
 
 
 public Fornecedor getFornecedor() {
@@ -164,13 +156,25 @@ public void setCategoria(CategoriaProduto categoria) {
 }
 
 
+public Collection<Venda> getVendas() {
+	return vendas;
+}
+
+
+public void setVendas(Collection<Venda> vendas) {
+	this.vendas = vendas;
+}
+
+
 @Override
 public String toString() {
-	return "Produtos [codigo=" + codigo + ", descricao=" + descricao + ", qntDisponivel=" + qntDisponivel
+	return "Produto [codigo=" + codigo + ", descricao=" + descricao + ", qntDisponivel=" + qntDisponivel
 			+ ", ultimaAquisicao=" + ultimaAquisicao + ", valorUnitario=" + valorUnitario + ", fabricante=" + fabricante
-			+ ", detalhes=" + detalhes + ", produtos=" + produtos + ", fornecedor=" + fornecedor + ", categoria="
+			+ ", detalhes=" + detalhes + ", vendas=" + vendas + ", fornecedor=" + fornecedor + ", categoria="
 			+ categoria + "]";
 }
+
+
 
 
 
