@@ -56,11 +56,14 @@ public class AtendenteTeste {
 		JOptionPane.showMessageDialog(null, "Confira se os dados foram gerados no banco");
 		JOptionPane.showMessageDialog(null, "Agora eles serão excluidos");
 		atendentes = ar.recuperarTodos();
-		System.out.println("Teste de exclusão");
+		System.out.println("TESTE DE EXCLUSÃO");
 		for(Atendente atendente: atendentes){
 			ar.remover(atendente);
 		}
-		
+		atendentes = ar.recuperarTodos();
+		if(atendentes.isEmpty()){
+			System.out.println("TODOS OS REGISTROS FORAM EXCLUIDOS");
+		}
 		ar.encerrar();
 	}
 	

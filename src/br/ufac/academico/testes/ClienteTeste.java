@@ -3,6 +3,8 @@ package br.ufac.academico.testes;
 import java.util.Date;
 import java.util.List;
 
+import javax.swing.JOptionPane;
+
 import br.ufac.academico.entidades.Cliente;
 import br.ufac.academico.entidades.Municipio;
 import br.ufac.academico.repositorios.ClienteRepositorio;
@@ -14,6 +16,7 @@ public class ClienteTeste {
 		
 		ClienteRepositorio cr = new ClienteRepositorio();
 		MunicipioRepositorio mr = new MunicipioRepositorio();
+		@SuppressWarnings("unused")
 		Date d1,d2,d3;
 		List<Cliente> clientes;
 		
@@ -34,7 +37,6 @@ public class ClienteTeste {
 		m3.setCep("87299365");
 		m3.setNome("Maragogi");
 		m3.setUfEstado("PE");
-		
 		
 		c1= new Cliente();
 		c1.setCadastro(d1 = new Date());
@@ -86,7 +88,8 @@ public class ClienteTeste {
 		for(Cliente cliente: clientes){
 			System.out.println(cliente);
 		}
-		
+		JOptionPane.showMessageDialog(null, "Confira se os dados foram gerados no banco");
+		JOptionPane.showMessageDialog(null, "Agora eles serão excluidos");
 		System.out.println("TESTANDO EXCLUSÃO");
 		for(Cliente cliente: clientes){
 			cr.remover(cliente);
@@ -96,6 +99,8 @@ public class ClienteTeste {
 			System.out.println("TODOS OS REGISTRO FORAM REMOVIDOS");
 		}
 		
+		mr.encerrar();
+		cr.encerrar();
 		
 		
 		

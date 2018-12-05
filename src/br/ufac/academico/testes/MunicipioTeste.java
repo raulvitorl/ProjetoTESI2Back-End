@@ -2,6 +2,8 @@ package br.ufac.academico.testes;
 
 import java.util.List;
 
+import javax.swing.JOptionPane;
+
 import br.ufac.academico.entidades.Municipio;
 import br.ufac.academico.repositorios.MunicipioRepositorio;
 
@@ -37,7 +39,8 @@ public class MunicipioTeste {
 		for(Municipio m: municipios) {
 			System.out.println(m);
 		}
-		
+		JOptionPane.showMessageDialog(null, "Confira se os dados foram gerados no banco");
+		JOptionPane.showMessageDialog(null, "Agora eles serão excluidos");
 		System.out.println("TESTE DE EXCLUSÃO");
 		for(Municipio m: municipios) {
 			mr.remover(m);
@@ -47,6 +50,8 @@ public class MunicipioTeste {
 		if(municipios.isEmpty()){
 			System.out.println("TODOS OS REGISTROS FORAM EXCLUIDOS");
 		}		
+		
+		mr.encerrar();
 		
 		
 	}

@@ -38,12 +38,14 @@ public class MunicipioRepositorio {
 		
 	}
 	
+	@SuppressWarnings("unchecked")
 	public List<Municipio> recuperarTodos(){
 		Query query = em.createNamedQuery("Municipios.todos");
 		return query.getResultList();
 		
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<Municipio> recuperarTodosPorNome(){
 		Query query = em.createNamedQuery("Municipios.todosPorNome");
 		return query.getResultList();

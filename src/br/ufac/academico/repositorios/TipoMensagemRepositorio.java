@@ -37,7 +37,7 @@ public class TipoMensagemRepositorio {
 		em.getTransaction().commit();
 		
 	}
-	
+	@SuppressWarnings("unchecked")
 	public List<TipoMensagem> recuperarTodos(){
 		Query query = em.createNamedQuery("TiposMensagens.todos");
 		return query.getResultList();

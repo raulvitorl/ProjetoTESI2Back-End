@@ -38,12 +38,14 @@ public class FornecedorRepositorio {
 		
 	}
 	
+	@SuppressWarnings("unchecked")
 	public List<Fornecedor> recuperarTodos(){
 		Query query = em.createNamedQuery("Fornecedores.todos");
 		return query.getResultList();
 		
 	}
-
+	
+	@SuppressWarnings("unchecked")
 	public List<Fornecedor> recuperarTodosPorNome(){
 		Query query = em.createNamedQuery("Fornecedores.todosPorNome");
 		return query.getResultList();

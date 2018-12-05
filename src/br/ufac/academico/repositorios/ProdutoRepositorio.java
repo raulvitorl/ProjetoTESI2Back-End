@@ -38,12 +38,14 @@ public class ProdutoRepositorio {
 		
 	}
 	
+	@SuppressWarnings("unchecked")
 	public List<Produto> recuperarTodos(){
 		Query query = em.createNamedQuery("Produtos.todos");
 		return query.getResultList();
 		
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<Produto> recuperarTodosPorNome(){
 		Query query = em.createNamedQuery("Produtos.todosPorNome");
 		return query.getResultList();

@@ -38,18 +38,21 @@ public class BancoRepositorio {
 		
 	}
 	
+	@SuppressWarnings("unchecked")
 	public List<Banco> recuperarTodos(){
 		Query query = em.createNamedQuery("Bancos.todos");
 		return query.getResultList();
 		
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<Banco> recuperarTodosPorNome(){
 		Query query = em.createNamedQuery("Bancos.todosPorNome");
 		return query.getResultList();
 		
 	}
 	
+	@SuppressWarnings("unchecked")
 	public List<Banco> recuperarTodosPorNomeContendo(String termo){
 		return em.createNamedQuery("Bancos.todosPorNomeContendo")
 				.setParameter("termo", "%"+termo+"%")

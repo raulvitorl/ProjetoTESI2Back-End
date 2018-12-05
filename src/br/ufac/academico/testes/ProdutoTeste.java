@@ -1,25 +1,34 @@
 package br.ufac.academico.testes;
 
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 import javax.swing.JOptionPane;
 
-import br.ufac.academico.entidades.Fornecedor;
-import br.ufac.academico.entidades.Municipio;
-import br.ufac.academico.repositorios.FornecedorRepositorio;
-import br.ufac.academico.repositorios.MunicipioRepositorio;
+import br.ufac.academico.entidades.*;
+import br.ufac.academico.repositorios.*;;
 
-public class FornecedorTeste {
+public class ProdutoTeste {
 	
 	public static void main(String[] args) {
+		ProdutoRepositorio pr = new ProdutoRepositorio();
+		CategoriaProdutoRepositorio cpr = new CategoriaProdutoRepositorio();
+		List<Produto> produtos;
 		
-		MunicipioRepositorio mr = new MunicipioRepositorio();
-		FornecedorRepositorio fr = new FornecedorRepositorio();
-		List<Fornecedor> fornecedores;
+		CategoriaProduto cp1,cp2,cp3;
 		
-		@SuppressWarnings("unused")
-		Date d1,d2,d3;
+		cp1 = new CategoriaProduto();
+		cp1.setDescricao("Higiene Pessoal");
+		cp1.setIdentificador(1);
+		
+		cp2 = new CategoriaProduto();
+		cp2.setDescricao("Móveis");
+		cp2.setIdentificador(2);
+		
+		cp3 = new CategoriaProduto();
+		cp3.setDescricao("Eletrônicos");
+		cp3.setIdentificador(3);
+				
+		
 		Municipio m1,m2,m3;
 		m1 =new Municipio();
 		m1.setCep("69911036");
@@ -36,8 +45,6 @@ public class FornecedorTeste {
 		m3.setNome("Maragogi");
 		m3.setUfEstado("PE");
 		
-		System.out.println("INCLUINDO OS MUNICIPIOS");
-				
 		Fornecedor f1,f2,f3;
 		f1 = new Fornecedor();
 		f1.setCnpj("52.933.955/0001-03");
@@ -74,30 +81,64 @@ public class FornecedorTeste {
 		f3.setNomeFantasia("Firma1");
 		f3.setRazaoSocial("Firma2");
 		f3.setWebSite("httphs://faacebook.com.br");
+				
+		Produto p1,p2,p3;
 		
-		System.out.println("TESTE DE INCLUSÇAO");
-		fr.adicionar(f1);
-		fr.adicionar(f2);
-		fr.adicionar(f3);
+		p1 = new Produto();
+		p1.setCategoria(cp1);
+		p1.setDescricao("Sabonete");
+		p1.setDetalhes("Aroma de flores");
+		p1.setFabricante("Sua Mãe");
+		p1.setFornecedor(f1);
+		p1.setQntDisponivel(12);
+		p1.setUltimaAquisicao("2018-10-10");
+		p1.setValorUnitario((float) 10.50);
+		
+		p2 = new Produto();
+		p2.setCategoria(cp2);
+		p2.setDescricao("Sofá");
+		p2.setDetalhes("Sofá Cama");
+		p2.setFabricante("Seu Pai");
+		p2.setFornecedor(f2);
+		p2.setQntDisponivel(10);
+		p2.setUltimaAquisicao("2018-11-11");
+		p2.setValorUnitario((float) 13.50);
+		
+		p3 = new Produto();
+		p3.setCategoria(cp3);
+		p3.setDescricao("Teclado");
+		p3.setDetalhes("Brilha no escuro");
+		p3.setFabricante("Seu Tio");
+		p3.setFornecedor(f3);
+		p3.setQntDisponivel(20);
+		p3.setUltimaAquisicao("2018-12-12");
+		p3.setValorUnitario((float) 30.50);
+		
+		System.out.println("TESTE DE INCLUSÃO");
+		pr.adicionar(p1);
+		pr.adicionar(p2);
+		pr.adicionar(p3);
 		System.out.println("TESTE DE LISTAGEM");
-		fornecedores = fr.recuperarTodos();
-		for(Fornecedor f : fornecedores){
-			System.out.println(f);
+		produtos = pr.recuperarTodos();
+		for(Produto p: produtos){
+			System.out.println(p);
 		}
 		JOptionPane.showMessageDialog(null, "Confira se os dados foram gerados no banco");
 		JOptionPane.showMessageDialog(null, "Agora eles serão excluidos");
 		System.out.println("TESTE DE EXCLUSÃO");
-		fornecedores = fr.recuperarTodos();
-		for(Fornecedor f : fornecedores){
-			fr.remover(f);;
-		}
-		fornecedores = fr.recuperarTodos();
-		if(fornecedores.isEmpty()){
-			System.out.println("TODOS OS REGISTROS FORAM EXCLUIDOS");
+		for(Produto p: produtos){
+			pr.remover(p);
 		}
 		
-		mr.encerrar();
-		fr.encerrar();
+		produtos = pr.recuperarTodos();
+		if(produtos.isEmpty()){
+			System.out.println("TODOS OS ELEMENTOS FORAM REMOVIDOS");
+		}
+		
+		pr.encerrar();
+		cpr.encerrar();
+		
+		
 		
 	}
 

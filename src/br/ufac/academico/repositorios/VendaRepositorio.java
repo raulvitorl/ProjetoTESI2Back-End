@@ -37,7 +37,7 @@ public class VendaRepositorio {
 		em.getTransaction().commit();
 		
 	}
-	
+	@SuppressWarnings("unchecked")
 	public List<Venda> recuperarTodos(){
 		Query query = em.createNamedQuery("Vendas.todos");
 		return query.getResultList();

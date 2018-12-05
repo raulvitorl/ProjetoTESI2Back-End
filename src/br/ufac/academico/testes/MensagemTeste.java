@@ -15,10 +15,7 @@ public class MensagemTeste {
 		TipoMensagemRepositorio tmsr = new TipoMensagemRepositorio();
 		MensagemRepositorio mr = new MensagemRepositorio();
 		
-		Atendente a = ar.recuperar(4);
-		TipoMensagem tms = tmsr.recuperar(5);
-		Mensagem m = mr.recuperar(1);
-		System.out.println(m.toString());
+		
 		
 	}
 

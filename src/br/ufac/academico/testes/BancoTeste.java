@@ -45,6 +45,8 @@ public class BancoTeste {
 		for(Banco banco: bancos){
 			System.out.println(banco);
 		}
+		JOptionPane.showMessageDialog(null, "Confira se os dados foram gerados no banco");
+		JOptionPane.showMessageDialog(null, "Agora eles serão excluidos");
 		System.out.println("TESTE DE EXCLUSÃO");
 		for(Banco banco: bancos){
 			br.remover(banco);
@@ -54,7 +56,7 @@ public class BancoTeste {
 			System.out.println("Todos os registros foram excluidos");
 		}
 		
-		
+		br.encerrar();
 		
 		
 	}

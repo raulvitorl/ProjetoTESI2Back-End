@@ -38,6 +38,7 @@ public class MensagemRepositorio {
 		
 	}
 	
+	@SuppressWarnings("unchecked")
 	public List<Mensagem> recuperarTodos(){
 		Query query = em.createNamedQuery("Mensagens.todos");
 		return query.getResultList();

@@ -38,12 +38,14 @@ public class AtendenteRepositorio {
 		
 	}
 	
+	@SuppressWarnings("unchecked")
 	public List<Atendente> recuperarTodos(){
 		Query query = em.createNamedQuery("Atendentes.todos");
 		return query.getResultList();
 		
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<Atendente> recuperarTodosPorNome(){
 		Query query = em.createNamedQuery("Atendentes.todosPorNome");
 		return query.getResultList();

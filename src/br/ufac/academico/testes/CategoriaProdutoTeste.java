@@ -2,6 +2,8 @@ package br.ufac.academico.testes;
 
 import java.util.List;
 
+import javax.swing.JOptionPane;
+
 import br.ufac.academico.entidades.CategoriaProduto;
 import br.ufac.academico.repositorios.CategoriaProdutoRepositorio;
 
@@ -13,15 +15,15 @@ public class CategoriaProdutoTeste {
 		CategoriaProduto cp1,cp2,cp3;
 		
 		cp1 = new CategoriaProduto();
-		cp1.setDescricao("Informativo");
+		cp1.setDescricao("Higiene Pessoal");
 		cp1.setIdentificador(1);
 		
 		cp2 = new CategoriaProduto();
-		cp2.setDescricao("Solicitação");
+		cp2.setDescricao("Móveis");
 		cp2.setIdentificador(2);
 		
 		cp3 = new CategoriaProduto();
-		cp3.setDescricao("Comunicado");
+		cp3.setDescricao("Eletrônicos");
 		cp3.setIdentificador(3);
 		System.out.println("TESTE DE INCLUSÃO");
 		cpr.adicionar(cp1);
@@ -45,6 +47,8 @@ public class CategoriaProdutoTeste {
 		for(CategoriaProduto categoria: categorias){
 			System.out.println(categoria);
 		}
+		JOptionPane.showMessageDialog(null, "Confira se os dados foram gerados no banco");
+		JOptionPane.showMessageDialog(null, "Agora eles serão excluidos");
 		System.out.println("TESTE DE EXCLUSÃO");
 		for(CategoriaProduto categoria: categorias){
 			cpr.remover(categoria);
@@ -55,7 +59,7 @@ public class CategoriaProdutoTeste {
 		}
 		
 		
-		
+		cpr.encerrar();
 		
 		
 		

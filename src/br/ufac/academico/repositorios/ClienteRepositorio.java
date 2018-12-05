@@ -2,7 +2,6 @@ package br.ufac.academico.repositorios;
 
 import java.util.*;
 import javax.persistence.*;
-import javax.swing.JOptionPane;
 
 import br.ufac.academico.entidades.*;
 
@@ -43,12 +42,14 @@ public class ClienteRepositorio {
 		
 	}
 	
+	@SuppressWarnings("unchecked")
 	public List<Cliente> recuperarTodos(){
 		Query query = em.createNamedQuery("Clientes.todos");
 		return query.getResultList();
 		
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<Cliente> recuperarTodosPorNome(){
 		Query query = em.createNamedQuery("Clientes.todosPorNome");
 		return query.getResultList();
