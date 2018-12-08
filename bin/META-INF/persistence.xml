@@ -4,16 +4,16 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 	<persistence-unit name="AcademicoJPA" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-		<class>br.ufac.academico.entidades.Atendente</class>
-		<class>br.ufac.academico.entidades.Banco</class>
-		<class>br.ufac.academico.entidades.CategoriaProduto</class>
-		<class>br.ufac.academico.entidades.Cliente</class>
-		<class>br.ufac.academico.entidades.Fornecedor</class>
-		<class>br.ufac.academico.entidades.Mensagem</class>
-		<class>br.ufac.academico.entidades.Municipio</class>
-		<class>br.ufac.academico.entidades.Produto</class>
-		<class>br.ufac.academico.entidades.TipoMensagem</class>
-		<class>br.ufac.academico.entidades.Venda</class>
+		<class>br.ufac.academico.domain.Atendente</class>
+		<class>br.ufac.academico.domain.Banco</class>
+		<class>br.ufac.academico.domain.CategoriaProduto</class>
+		<class>br.ufac.academico.domain.Cliente</class>
+		<class>br.ufac.academico.domain.Fornecedor</class>
+		<class>br.ufac.academico.domain.Mensagem</class>
+		<class>br.ufac.academico.domain.Municipio</class>
+		<class>br.ufac.academico.domain.Produto</class>
+		<class>br.ufac.academico.domain.TipoMensagem</class>
+		<class>br.ufac.academico.domain.Venda</class>
 		<properties>
 			<property name="javax.persistence.jdbc.url" 		value="jdbc:mysql://localhost:3306/bd2018"/>
 			<property name="javax.persistence.jdbc.user" 		value="root"/>
