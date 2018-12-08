@@ -15,6 +15,8 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
+import br.ufac.academico.domain.enums.StatusPagamento;
+
 @Entity
 @Table(name="vendas")
 //Consultas que serão realizadas no repositório
@@ -44,7 +46,7 @@ public class Venda {
 	private Banco banco;
 	
 	@Column(name="ven_valor_total")
-	private float valorTotal;
+	private double valorTotal;
 	
 	@Column(name="ven_forma_pagamento")
 	private String formaPagamento;
@@ -94,12 +96,12 @@ public class Venda {
 		this.banco = banco;
 	}
 
-	public float getValorTotal() {
+	public double getValorTotal() {
 		return valorTotal;
 	}
 
-	public void setValorTotal(float valorTotal) {
-		this.valorTotal = valorTotal;
+	public void setValorTotal(double d) {
+		this.valorTotal = d;
 	}
 
 	public String getFormaPagamento() {
@@ -127,12 +129,12 @@ public class Venda {
 	}
 	
 	
-	public Integer getStatusPagamento() {
-		return statusPagamento;
+	public StatusPagamento getStatusPagamento() {
+		return StatusPagamento.toEnum(statusPagamento);
 	}
 
-	public void setStatusPagamento(Integer statusPagamento) {
-		this.statusPagamento = statusPagamento;
+	public void setStatusPagamento(StatusPagamento status) {
+		this.statusPagamento = status.getCod();
 	}
 
 	@Override

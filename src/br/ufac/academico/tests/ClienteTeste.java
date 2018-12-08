@@ -7,6 +7,7 @@ import javax.swing.JOptionPane;
 
 import br.ufac.academico.domain.Cliente;
 import br.ufac.academico.domain.Municipio;
+import br.ufac.academico.domain.enums.SexoCliente;
 import br.ufac.academico.domain.enums.TipoCliente;
 import br.ufac.academico.repositories.ClienteRepositorio;
 import br.ufac.academico.repositories.MunicipioRepositorio;
@@ -47,7 +48,7 @@ public class ClienteTeste {
 		c1.setEndereco("Rua Catuipe 279 Parque dos Anjos");
 		c1.setFone("(51) 99803-6615");
 		c1.setNome("Francisco Hugo Roberto Galvão");
-		c1.setSexo("M");
+		c1.setSexo(SexoCliente.MASCULINO);
 		c1.setStatus("A");
 		c1.setTipo(TipoCliente.PESSOAFISICA);
 		c1.setMunicipio(m1);
@@ -60,7 +61,7 @@ public class ClienteTeste {
 		c2.setEndereco("Rua Teresinha Lages Visgueira 508 Vale Quem Tem");
 		c2.setFone("(86) 98215-5693");
 		c2.setNome("Natália Olivia Fogaça");
-		c2.setSexo("F");
+		c2.setSexo(SexoCliente.FEMININO);
 		c2.setStatus("I");
 		c2.setTipo(TipoCliente.PESSOAFISICA);
 		c2.setMunicipio(m2);
@@ -73,7 +74,7 @@ public class ClienteTeste {
 		c3.setEndereco("Rua Catuipe 279 Parque dos Anjos");
 		c3.setFone("(51) 99803-6615");
 		c3.setNome("Francisco Hugo Roberto Galvão");
-		c3.setSexo("M");
+		c3.setSexo(SexoCliente.MASCULINO);
 		c3.setStatus("A");
 		c3.setTipo(TipoCliente.PESSOAFISICA);
 		c3.setMunicipio(m3);

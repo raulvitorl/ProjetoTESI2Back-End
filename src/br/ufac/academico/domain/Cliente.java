@@ -6,6 +6,7 @@ import java.util.Collection;
 
 import javax.persistence.*;
 
+import br.ufac.academico.domain.enums.SexoCliente;
 import br.ufac.academico.domain.enums.TipoCliente;
 
 @Entity
@@ -31,7 +32,7 @@ public class Cliente implements Serializable{
 	private Municipio municipio;	
 	private String nome;
 	private Date nascimento;
-	private String sexo;
+	private Integer sexo;
 	private String endereco;
 	private String email;
 	private Date cadastro;
@@ -80,14 +81,6 @@ public class Cliente implements Serializable{
 		this.nascimento = nascimento;
 	}
 
-	public String getSexo() {
-		return sexo;
-	}
-
-	public void setSexo(String sexo) {
-		this.sexo = sexo;
-	}
-
 	public String getEndereco() {
 		return endereco;
 	}
@@ -119,6 +112,15 @@ public class Cliente implements Serializable{
 	public void setTipo(TipoCliente tipo) {
 		this.tipo = tipo.getCod();
 	}
+	
+	public SexoCliente getSexo() {
+		return SexoCliente.toEnum(sexo);
+	}
+
+	public void setSexo(SexoCliente sexo) {
+		this.sexo = sexo.getCod();
+	}
+
 	
 	public String getStatus() {
 		return status;
