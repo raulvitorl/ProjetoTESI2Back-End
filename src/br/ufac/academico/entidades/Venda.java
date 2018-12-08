@@ -49,12 +49,14 @@ public class Venda {
 	@Column(name="ven_forma_pagamento")
 	private String formaPagamento;
 	
+	private Integer statusPagamento;
+	
 	@Column(name="ven_observacoes")
 	private String observacoes;
 	
 	@ManyToMany(cascade={CascadeType.ALL})
 	@JoinColumn(name="produtosVenda")
-	private Collection<Produto> produtos;;
+	private Collection<Produto> produtos;
 	
 	public Venda(){
 		
@@ -123,16 +125,24 @@ public class Venda {
 	public void setProdutos(Collection<Produto> produtos) {
 		this.produtos = produtos;
 	}
+	
+	
+	public Integer getStatusPagamento() {
+		return statusPagamento;
+	}
+
+	public void setStatusPagamento(Integer statusPagamento) {
+		this.statusPagamento = statusPagamento;
+	}
 
 	@Override
 	public String toString() {
-		return "Vendas [codigo=" + codigo + ", cliente=" + cliente + ", atendente=" + atendente + ", banco=" + banco
-				+ ", valorTotal=" + valorTotal + ", formaPagamento=" + formaPagamento + ", observacoes=" + observacoes
-				+ ", produtos=" + produtos + "]";
+		return "Venda [codigo=" + codigo + ", cliente=" + cliente + ", atendente=" + atendente + ", banco=" + banco
+				+ ", valorTotal=" + valorTotal + ", formaPagamento=" + formaPagamento + ", statusPagamento="
+				+ statusPagamento + ", observacoes=" + observacoes + "]";
 	}
-	
-	
-	
+
+
 	
 	
 	

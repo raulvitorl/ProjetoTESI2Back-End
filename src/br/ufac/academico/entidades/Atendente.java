@@ -4,6 +4,8 @@ import java.util.Collection;
 
 import javax.persistence.*;
 
+import br.ufac.academico.entidades.enums.PerfilAtendente;
+
 @Entity
 @Table(name="atendentes")
 //Consultas que serão realizadas no repositório
@@ -33,14 +35,14 @@ public class Atendente {
 	@Column(name="ate_status")
 	private char status;
 	@Column(name="ate_perfil")
-	private String perfil;
+	private Integer perfil;
 	@Column(name="ate_cpf")
 	private String cpf;
 	
 	@OneToMany(mappedBy = "atendente", targetEntity = Venda.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private Collection<Venda> vendas;
 	
-	@OneToMany(mappedBy = "atendenteMensagem", targetEntity = Mensagem.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "atendente", targetEntity = Mensagem.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private Collection<Mensagem> mensagens;
 	
 	public Atendente() {}
@@ -93,12 +95,12 @@ public class Atendente {
 		this.status = status;
 	}
 
-	public String getPerfil() {
-		return perfil;
+	public PerfilAtendente getPerfil() {
+		return PerfilAtendente.toEnum(perfil);
 	}
 
-	public void setPerfil(String perfil) {
-		this.perfil = perfil;
+	public void setPerfil(PerfilAtendente perfil) {
+		this.perfil = perfil.getCod();
 	}
 
 	public String getCpf() {

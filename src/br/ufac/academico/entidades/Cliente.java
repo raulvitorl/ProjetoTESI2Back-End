@@ -6,6 +6,8 @@ import java.util.Collection;
 
 import javax.persistence.*;
 
+import br.ufac.academico.entidades.enums.TipoCliente;
+
 @Entity
 //Consultas que serão realizadas no repositório
 @NamedQueries({
@@ -110,14 +112,14 @@ public class Cliente implements Serializable{
 		this.cadastro = cadastro;
 	}
 
-	public Integer getTipo() {
-		return tipo;
+	public TipoCliente getTipo() {
+		return TipoCliente.toEnum(tipo);
 	}
 
-	public void setTipo(Integer tipo) {
-		this.tipo = tipo;
+	public void setTipo(TipoCliente tipo) {
+		this.tipo = tipo.getCod();
 	}
-
+	
 	public String getStatus() {
 		return status;
 	}

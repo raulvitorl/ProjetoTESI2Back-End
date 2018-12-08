@@ -34,7 +34,7 @@ public class TipoMensagem {
 	@Column(name="tmsdescricao")
 	private String descricao;
 	
-	@OneToMany(mappedBy = "tipoMensagem", targetEntity = Mensagem.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "tipo", targetEntity = Mensagem.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private Collection<Mensagem> mensagens;
 	
 public TipoMensagem(){

@@ -7,6 +7,7 @@ import javax.swing.JOptionPane;
 
 import br.ufac.academico.entidades.Cliente;
 import br.ufac.academico.entidades.Municipio;
+import br.ufac.academico.entidades.enums.TipoCliente;
 import br.ufac.academico.repositorios.ClienteRepositorio;
 import br.ufac.academico.repositorios.MunicipioRepositorio;
 
@@ -48,7 +49,7 @@ public class ClienteTeste {
 		c1.setNome("Francisco Hugo Roberto Galvão");
 		c1.setSexo("M");
 		c1.setStatus("A");
-		c1.setTipo(1);
+		c1.setTipo(TipoCliente.PESSOAFISICA);
 		c1.setMunicipio(m1);
 		
 		c2= new Cliente();
@@ -61,7 +62,7 @@ public class ClienteTeste {
 		c2.setNome("Natália Olivia Fogaça");
 		c2.setSexo("F");
 		c2.setStatus("I");
-		c2.setTipo(1);
+		c2.setTipo(TipoCliente.PESSOAFISICA);
 		c2.setMunicipio(m2);
 		
 		c3= new Cliente();
@@ -74,7 +75,7 @@ public class ClienteTeste {
 		c3.setNome("Francisco Hugo Roberto Galvão");
 		c3.setSexo("M");
 		c3.setStatus("A");
-		c3.setTipo(1);
+		c3.setTipo(TipoCliente.PESSOAFISICA);
 		c3.setMunicipio(m3);
 		
 		System.out.println("TESTANDO INSERÇÃO");

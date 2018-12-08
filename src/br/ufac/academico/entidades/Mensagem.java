@@ -1,5 +1,7 @@
 package br.ufac.academico.entidades;
 
+import java.util.Date;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -30,44 +32,54 @@ public class Mensagem {
 	
 	@ManyToOne(cascade={CascadeType.ALL})
 	@JoinColumn(name="men_ate_codigo")	
-	private Atendente atendenteMensagem;
+	private Atendente atendente;
 	
 	@ManyToOne(cascade={CascadeType.ALL})
 	@JoinColumn(name="men_tms_codigo")	
-	private TipoMensagem tipoMensagem;
-	
+	private TipoMensagem tipo;
 	@Column(name="men_texto")
 	private String texto;
 	@Column(name="men_data_envio")
-	private String dataEnvio;
-	public Atendente getMen_ate_codigo() {
-		return atendenteMensagem;
-	}
-	public void setMen_ate_codigo(Atendente men_ate_codigo) {
-		this.atendenteMensagem = men_ate_codigo;
-	}
-
+	private Date dataEnvio;
 	
-	public Atendente getAtendenteMensagem() {
-		return atendenteMensagem;
-	}
-	public void setAtendenteMensagem(Atendente atendenteMensagem) {
-		this.atendenteMensagem = atendenteMensagem;
-	}
-	public TipoMensagem getTipoMensagem() {
-		return tipoMensagem;
-	}
-	public void setTipoMensagem(TipoMensagem tipoMensagem) {
-		this.tipoMensagem = tipoMensagem;
-	}
 	
+	public long getCodigo() {
+		return codigo;
+	}
+	public void setCodigo(long codigo) {
+		this.codigo = codigo;
+	}
+	public Atendente getAtendente() {
+		return atendente;
+	}
+	public void setAtendente(Atendente atendente) {
+		this.atendente = atendente;
+	}
+	public TipoMensagem getTipo() {
+		return tipo;
+	}
+	public void setTipo(TipoMensagem tipo) {
+		this.tipo = tipo;
+	}
+	public String getTexto() {
+		return texto;
+	}
+	public void setTexto(String texto) {
+		this.texto = texto;
+	}
+	public Date getDataEnvio() {
+		return dataEnvio;
+	}
+	public void setDataEnvio(Date dataEnvio) {
+		this.dataEnvio = dataEnvio;
+	}
 	public Mensagem() {
 		super();
 	}
 	@Override
 	public String toString() {
-		return "Mensagens [codigo=" + codigo + ", atendenteMensagem=" + atendenteMensagem + ", tipoMensagem="
-				+ tipoMensagem + ", texto=" + texto + ", dataEnvio=" + dataEnvio + "]";
+		return "Mensagens [codigo=" + codigo + ", atendenteMensagem=" + atendente + ", tipoMensagem="
+				+ tipo + ", texto=" + texto + ", dataEnvio=" + dataEnvio + "]";
 	}
 	
 	

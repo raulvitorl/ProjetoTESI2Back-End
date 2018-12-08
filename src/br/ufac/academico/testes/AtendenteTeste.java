@@ -5,6 +5,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 import br.ufac.academico.entidades.Atendente;
+import br.ufac.academico.entidades.enums.PerfilAtendente;
 import br.ufac.academico.repositorios.AtendenteRepositorio;
 
 public class AtendenteTeste {
@@ -19,7 +20,7 @@ public class AtendenteTeste {
 		a1.setCpf("027.725.062-58");
 		a1.setEmail("raulawliet@gmail.com");
 		a1.setNome("Raul Vitor Lopes da Costa");
-		a1.setPerfil("B");
+		a1.setPerfil(PerfilAtendente.SUPERVISOR);
 		a1.setRamal("7034");
 		a1.setStatus('A');
 		a1.setUltimoAcesso("2018-10-10");
@@ -28,7 +29,7 @@ public class AtendenteTeste {
 		a2.setCpf("021.590.732-96");
 		a2.setEmail("will_menezes@gmail.com");
 		a2.setNome("José William Menezes Ribeiro");
-		a2.setPerfil("A");
+		a2.setPerfil(PerfilAtendente.BALCONISTA);
 		a2.setRamal("9735");
 		a2.setStatus('A');
 		a2.setUltimoAcesso("2017-05-04");
@@ -37,7 +38,7 @@ public class AtendenteTeste {
 		a3.setCpf("043.892.560-25");
 		a3.setEmail("e151845839@mailox.fun");
 		a3.setNome("Anderson Thomas Corte Real");
-		a3.setPerfil("C");
+		a3.setPerfil(PerfilAtendente.BALCONISTA);
 		a3.setRamal("2845");
 		a3.setStatus('I');
 		a3.setUltimoAcesso("2015-12-12");
