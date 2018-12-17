@@ -22,7 +22,7 @@ public class BancoRepositorio {
 		
 	}
 	
-	public Banco recuperar(long id) {
+	public Banco recuperar(Integer id) {
 		return em.find(Banco.class, id);
 	}
 	

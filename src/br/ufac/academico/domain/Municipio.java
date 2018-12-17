@@ -23,14 +23,14 @@ public class Municipio {
 private Integer codigo;
 @Column(name="mun_nome")	
 private String nome;
-@Column(name="mun_uf_estado")
+@Column(name="mun_uf_estado",length=2)
 private String UfEstado;
-@Column(name="mun_cep")
+@Column(name="mun_cep",length=9)
 private String  cep;
 
-@OneToMany(mappedBy = "municipio", targetEntity = Fornecedor.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+@OneToMany(mappedBy = "municipio", targetEntity = Fornecedor.class, fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
 private Collection<Fornecedor> fornecedores;
-@OneToMany(mappedBy = "municipio", targetEntity = Cliente.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+@OneToMany(mappedBy = "municipio", targetEntity = Cliente.class, fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
 private Collection<Cliente> clientes;
 public Municipio(){}
 public Integer getCodigo() {

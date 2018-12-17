@@ -22,7 +22,7 @@ public class AtendenteRepositorio {
 		
 	}
 	
-	public Atendente recuperar(long id) {
+	public Atendente recuperar(Integer id) {
 		return em.find(Atendente.class, id);
 	}
 	

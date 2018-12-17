@@ -44,6 +44,14 @@ public class VendaRepositorio {
 		return query.getResultList();
 		
 	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Venda> recuperarTodosPorCliente(int termo){
+		return em.createNamedQuery("Vendas.todosPorCliente")
+				.setParameter("termo", "%" + termo + "%")
+				.getResultList();
+	}
+
 
 
 	public void encerrar() {

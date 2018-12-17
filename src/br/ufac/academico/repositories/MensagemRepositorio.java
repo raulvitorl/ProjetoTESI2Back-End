@@ -16,6 +16,9 @@ public class MensagemRepositorio {
 	}
 
 	public void adicionar(Mensagem mensagem) {	
+		@SuppressWarnings("unused")
+		Date d1;
+		mensagem.setDataEnvio(d1 = new Date());
 		em.getTransaction().begin();
 		em.persist(mensagem);
 		em.getTransaction().commit();

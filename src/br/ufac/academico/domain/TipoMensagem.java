@@ -30,22 +30,22 @@ public class TipoMensagem {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private long codigo;
+	private Integer codigo;
 	@Column(name="tmsdescricao")
 	private String descricao;
 	
-	@OneToMany(mappedBy = "tipo", targetEntity = Mensagem.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "tipo", targetEntity = Mensagem.class, fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
 	private Collection<Mensagem> mensagens;
 	
 public TipoMensagem(){
 		
 	}
 
-public long getCodigo() {
+public Integer getCodigo() {
 	return codigo;
 }
 
-public void setCodigo(long codigo) {
+public void setCodigo(Integer codigo) {
 	this.codigo = codigo;
 }
 

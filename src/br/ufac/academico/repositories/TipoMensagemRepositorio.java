@@ -22,7 +22,7 @@ public class TipoMensagemRepositorio {
 		
 	}
 	
-	public TipoMensagem recuperar(long id) {
+	public TipoMensagem recuperar(Integer id) {
 		return em.find(TipoMensagem.class, id);
 	}
 	

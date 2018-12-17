@@ -1,6 +1,7 @@
 package br.ufac.academico.domain;
 
 import java.util.Collection;
+import java.util.Date;
 
 import javax.persistence.*;
 
@@ -14,25 +15,25 @@ import javax.persistence.*;
 		query="SELECT f FROM Fornecedor f"),
 	
 	@NamedQuery(name="Fornecedores.todosPorNome", 
-		query="SELECT f FROM Fornecedor f ORDER BY f.NomeContato")
+		query="SELECT f FROM Fornecedor f ORDER BY f.nomeContato")
 })
 public class Fornecedor {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private long codigo;
+	private Integer codigo;
 	@Column(name="for_razao_social")
-	private String RazaoSocial;
+	private String razaoSocial;
 	@Column(name="for_nome_contato")
-	private	String NomeContato;
+	private	String nomeContato;
 	@Column(name="for_nome_fantasia")
-	private String NomeFantasia;
-	@Column(name="for_cnpj")
+	private String nomeFantasia;
+	@Column(name="for_cnpj",length=18)
 	private String cnpj;
 	@Column(name="for_endereco")
 	private String endereco;
 	@Column(name="for_data_cadastro")
-	private String dataCadastro;
+	private Date dataCadastro;
 	@Column(name="for_fone")
 	private String fone;
 	@Column(name="for_email")
@@ -40,44 +41,50 @@ public class Fornecedor {
 	@Column(name="for_website")
 	private String webSite;
 	
-	@OneToMany(mappedBy = "fornecedor", targetEntity = Produto.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "fornecedor", targetEntity = Produto.class, fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
 	private Collection<Produto> produtos;
 	
-	@ManyToOne(cascade={CascadeType.ALL})
+	@ManyToOne(cascade={CascadeType.MERGE})
 	@JoinColumn(name="for_mun_codigo")	
 	private Municipio municipio;
 
-	public long getCodigo() {
-		return codigo;
-	}
-
-	public void setCodigo(long codigo) {
-		this.codigo = codigo;
-	}
-
-	public String getRazaoSocial() {
-		return RazaoSocial;
-	}
-
-	public void setRazaoSocial(String razaoSocial) {
-		RazaoSocial = razaoSocial;
-	}
-
+	
+	
+	
 	public String getNomeContato() {
-		return NomeContato;
+		return nomeContato;
 	}
 
 	public void setNomeContato(String nomeContato) {
-		NomeContato = nomeContato;
+		this.nomeContato = nomeContato;
 	}
 
 	public String getNomeFantasia() {
-		return NomeFantasia;
+		return nomeFantasia;
 	}
 
 	public void setNomeFantasia(String nomeFantasia) {
-		NomeFantasia = nomeFantasia;
+		this.nomeFantasia = nomeFantasia;
 	}
+
+	public Integer getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(Integer codigo) {
+		this.codigo = codigo;
+	}
+
+	
+
+	public String getRazaoSocial() {
+		return razaoSocial;
+	}
+
+	public void setRazaoSocial(String razaoSocial) {
+		this.razaoSocial = razaoSocial;
+	}
+
 
 	public String getCnpj() {
 		return cnpj;
@@ -95,11 +102,11 @@ public class Fornecedor {
 		this.endereco = endereco;
 	}
 
-	public String getDataCadastro() {
+	public Date getDataCadastro() {
 		return dataCadastro;
 	}
 
-	public void setDataCadastro(String dataCadastro) {
+	public void setDataCadastro(Date dataCadastro) {
 		this.dataCadastro = dataCadastro;
 	}
 
@@ -145,8 +152,8 @@ public class Fornecedor {
 
 	@Override
 	public String toString() {
-		return "Fornecedores [codigo=" + codigo + ", RazaoSocial=" + RazaoSocial + ", NomeContato=" + NomeContato
-				+ ", NomeFantasia=" + NomeFantasia + ", cnpj=" + cnpj + ", endereco=" + endereco + ", dataCadastro="
+		return "Fornecedores [codigo=" + codigo + ", RazaoSocial=" + razaoSocial + ", NomeContato=" + nomeContato
+				+ ", NomeFantasia=" + nomeFantasia + ", cnpj=" + cnpj + ", endereco=" + endereco + ", dataCadastro="
 				+ dataCadastro + ", fone=" + fone + ", email=" + email + ", webSite=" + webSite + ", produtos="
 				+ produtos + ", municipio=" + municipio + "]";
 	}	

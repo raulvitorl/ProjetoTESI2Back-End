@@ -28,13 +28,13 @@ public class Mensagem {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private long codigo;
+	private Integer codigo;
 	
-	@ManyToOne(cascade={CascadeType.ALL})
+	@ManyToOne(cascade={CascadeType.MERGE})
 	@JoinColumn(name="men_ate_codigo")	
 	private Atendente atendente;
 	
-	@ManyToOne(cascade={CascadeType.ALL})
+	@ManyToOne(cascade={CascadeType.MERGE})
 	@JoinColumn(name="men_tms_codigo")	
 	private TipoMensagem tipo;
 	@Column(name="men_texto")
@@ -43,10 +43,10 @@ public class Mensagem {
 	private Date dataEnvio;
 	
 	
-	public long getCodigo() {
+	public Integer getCodigo() {
 		return codigo;
 	}
-	public void setCodigo(long codigo) {
+	public void setCodigo(Integer codigo) {
 		this.codigo = codigo;
 	}
 	public Atendente getAtendente() {

@@ -15,7 +15,7 @@
 		<class>br.ufac.academico.entidades.Municipios</class>
 		<class>br.ufac.academico.entidades.Produtos</class>
 		<class>br.ufac.academico.entidades.TiposMensagens</class>
-		<class>br.ufac.academico.entidades.Vendas</class>
+		<class>br.ufac.academico.entidades.Vendas</class>			
 		<properties>
 			<property name="javax.persistence.jdbc.url"
 				value="jdbc:mysql://localhost:3306/academico" />
@@ -29,6 +29,6 @@
 			<property name="hibernate.hbm2ddl.auto" value="update" />
 			<property name="hibernate.show_sql" value="false" />
 			<property name="hibernate.format_sql" value="false" />
-		</properties>
+		</properties>		
 	</persistence-unit>
 </persistence>

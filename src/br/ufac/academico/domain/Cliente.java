@@ -2,11 +2,13 @@ package br.ufac.academico.domain;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import java.util.Collection;
 
 import javax.persistence.*;
 
 import br.ufac.academico.domain.enums.SexoCliente;
+import br.ufac.academico.domain.enums.StatusCliente;
 import br.ufac.academico.domain.enums.TipoCliente;
 
 @Entity
@@ -27,28 +29,32 @@ public class Cliente implements Serializable{
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int codigo;
 
-	@ManyToOne(cascade={CascadeType.ALL})
+	@ManyToOne(cascade={CascadeType.MERGE})
 	@JoinColumn(name="cli_mun_codigo")	
 	private Municipio municipio;	
 	private String nome;
-	private Date nascimento;
+	@Column(length=14)
+	private String cpf;
 	private Integer sexo;
 	private String endereco;
 	private String email;
-	private Date cadastro;
 	private Integer tipo;
-	private String status;
+	private Integer status;
+	@Column(length=15)
 	private String fone;
 	private String contato;
-	private String cpf;
+	private Date nascimento;
+	private Date cadastro;
 
-	@OneToMany(mappedBy = "cliente", targetEntity = Venda.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	private Collection<Venda> vendas;
+	@OneToMany(mappedBy = "cliente", targetEntity = Venda.class, fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
+	private List<Venda> vendas;
 
 	public Cliente() {
 		super();
 	}
 
+	
+	
 	public int getCodigo() {
 		return codigo;
 	}
@@ -122,12 +128,12 @@ public class Cliente implements Serializable{
 	}
 
 	
-	public String getStatus() {
-		return status;
+	public StatusCliente getStatus() {
+		return StatusCliente.toEnum(status);
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
+	public void setStatus(StatusCliente status) {
+		this.status = status.getCod();
 	}
 
 	public String getFone() {
@@ -154,11 +160,11 @@ public class Cliente implements Serializable{
 		this.cpf = cpf;
 	}
 
-	public Collection<Venda> getVendas() {
+	public List<Venda> getVendas() {
 		return vendas;
 	}
 
-	public void setVendas(Collection<Venda> vendas) {
+	public void setVendas(List<Venda> vendas) {
 		this.vendas = vendas;
 	}
 

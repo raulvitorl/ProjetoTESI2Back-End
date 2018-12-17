@@ -18,14 +18,16 @@ public class ClienteRepositorio {
 	
 
 	public void adicionar(Cliente cliente) {
-		
+		@SuppressWarnings("unused")
+		Date d1;
+		cliente.setCadastro(d1 = new Date());
 		em.getTransaction().begin();
 		em.persist(cliente);
 		em.getTransaction().commit();
 		
 	}
 	
-	public Cliente recuperar(long id) {
+	public Cliente recuperar(Integer id) {
 		return em.find(Cliente.class, id);
 	}
 	
@@ -36,9 +38,13 @@ public class ClienteRepositorio {
 	}
 	
 	public void remover(Cliente Clientes) {
-		em.getTransaction().begin();
-		em.remove(Clientes);
-		em.getTransaction().commit();
+		try {
+			em.getTransaction().begin();
+			em.remove(Clientes);
+			em.getTransaction().commit();
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		}	
 		
 	}
 	

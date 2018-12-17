@@ -22,7 +22,7 @@ public class MunicipioRepositorio {
 		
 	}
 	
-	public Municipio recuperar(long id) {
+	public Municipio recuperar(Integer id) {
 		return em.find(Municipio.class, id);
 	}
 	

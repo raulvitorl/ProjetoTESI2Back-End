@@ -7,6 +7,7 @@ import javax.swing.JOptionPane;
 
 import br.ufac.academico.domain.*;
 import br.ufac.academico.domain.enums.PerfilAtendente;
+import br.ufac.academico.domain.enums.StatusAtendente;
 import br.ufac.academico.repositories.*;
 
 public class MensagemTeste {
@@ -30,8 +31,8 @@ public class MensagemTeste {
 		a1.setNome("Raul Vitor Lopes da Costa");
 		a1.setPerfil(PerfilAtendente.SUPERVISOR);
 		a1.setRamal("7034");
-		a1.setStatus('A');
-		a1.setUltimoAcesso("2018-10-10");
+		a1.setStatus(StatusAtendente.DISPONIVEL);
+		a1.setUltimoAcesso(d1 = new Date());
 		
 		a2 = new Atendente();
 		a2.setCpf("021.590.732-96");
@@ -39,8 +40,8 @@ public class MensagemTeste {
 		a2.setNome("José William Menezes Ribeiro");
 		a2.setPerfil(PerfilAtendente.BALCONISTA);
 		a2.setRamal("9735");
-		a2.setStatus('A');
-		a2.setUltimoAcesso("2017-05-04");
+		a2.setStatus(StatusAtendente.DISPONIVEL);
+		a2.setUltimoAcesso(d2 = new Date());
 		
 		a3 = new Atendente();
 		a3.setCpf("043.892.560-25");
@@ -48,8 +49,8 @@ public class MensagemTeste {
 		a3.setNome("Anderson Thomas Corte Real");
 		a3.setPerfil(PerfilAtendente.BALCONISTA);
 		a3.setRamal("2845");
-		a3.setStatus('I');
-		a3.setUltimoAcesso("2015-12-12");
+		a3.setStatus(StatusAtendente.DISPONIVEL);;
+		a3.setUltimoAcesso(d3 = new Date());
 				
 		tms1 = new TipoMensagem();
 		tms1.setDescricao("Informativo");

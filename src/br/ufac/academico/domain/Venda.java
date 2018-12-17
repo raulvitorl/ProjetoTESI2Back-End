@@ -1,6 +1,6 @@
 package br.ufac.academico.domain;
 
-import java.util.Collection;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -15,6 +15,7 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
+import br.ufac.academico.domain.enums.FormaPagamento;
 import br.ufac.academico.domain.enums.StatusPagamento;
 
 @Entity
@@ -24,51 +25,54 @@ import br.ufac.academico.domain.enums.StatusPagamento;
 	//Essa named querry retorna todos os Atendentes,
 	//e vai ser chamada de dentro do repositório
 	@NamedQuery(name="Vendas.todos", 
-		query="SELECT v FROM Venda v")
+		query="SELECT v FROM Venda v"),
+	
+	@NamedQuery(name="Vendas.todosPorCliente", 
+	query="SELECT v FROM Venda v WHERE :termo=v.cliente.codigo"),
 })
 
 public class Venda {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private long codigo;
+	private Integer codigo;
 	
-	@ManyToOne(cascade={CascadeType.ALL})
+	@ManyToOne(cascade={CascadeType.MERGE})
 	@JoinColumn(name="ven_cli_codigo")	
 	private Cliente cliente;
 	
-	@ManyToOne(cascade={CascadeType.ALL})
+	@ManyToOne(cascade={CascadeType.MERGE})
 	@JoinColumn(name="ven_ate_codigo")	
 	private Atendente atendente;
 	
-	@ManyToOne(cascade={CascadeType.ALL})
+	@ManyToOne(cascade={CascadeType.MERGE})
 	@JoinColumn(name="ven_ban_codigo")	
 	private Banco banco;
 	
 	@Column(name="ven_valor_total")
-	private double valorTotal;
+	private float valorTotal;
 	
 	@Column(name="ven_forma_pagamento")
-	private String formaPagamento;
+	private Integer formaPagamento;
 	
 	private Integer statusPagamento;
 	
 	@Column(name="ven_observacoes")
 	private String observacoes;
 	
-	@ManyToMany(cascade={CascadeType.ALL})
+	@ManyToMany(cascade={CascadeType.MERGE})
 	@JoinColumn(name="produtosVenda")
-	private Collection<Produto> produtos;
+	private List<Produto> produtos;
 	
 	public Venda(){
 		
 	}
 
-	public long getCodigo() {
+	public Integer getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(long codigo) {
+	public void setCodigo(Integer codigo) {
 		this.codigo = codigo;
 	}
 
@@ -96,20 +100,20 @@ public class Venda {
 		this.banco = banco;
 	}
 
-	public double getValorTotal() {
+	public float getValorTotal() {
 		return valorTotal;
 	}
 
-	public void setValorTotal(double d) {
+	public void setValorTotal(float d) {
 		this.valorTotal = d;
 	}
 
-	public String getFormaPagamento() {
-		return formaPagamento;
+	public FormaPagamento getFormaPagamento() {
+		return FormaPagamento.toEnum(formaPagamento);
 	}
 
-	public void setFormaPagamento(String formaPagamento) {
-		this.formaPagamento = formaPagamento;
+	public void setFormaPagamento(FormaPagamento formaPagamento) {
+		this.formaPagamento = formaPagamento.getCod();
 	}
 
 	public String getObservacoes() {
@@ -120,11 +124,11 @@ public class Venda {
 		this.observacoes = observacoes;
 	}
 
-	public Collection<Produto> getProdutos() {
+	public List<Produto> getProdutos() {
 		return produtos;
 	}
 
-	public void setProdutos(Collection<Produto> produtos) {
+	public void setProdutos(List<Produto> produtos) {
 		this.produtos = produtos;
 	}
 	

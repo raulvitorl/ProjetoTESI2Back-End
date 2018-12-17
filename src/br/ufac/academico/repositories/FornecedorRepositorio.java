@@ -15,14 +15,17 @@ public class FornecedorRepositorio {
 		em = emf.createEntityManager();
 	}
 
-	public void adicionar(Fornecedor fornecedor) {	
+	public void adicionar(Fornecedor fornecedor) {
+		@SuppressWarnings("unused")
+		Date d1;
+		fornecedor.setDataCadastro(d1 = new Date());  
 		em.getTransaction().begin();
 		em.persist(fornecedor);
 		em.getTransaction().commit();
 		
 	}
 	
-	public Fornecedor recuperar(long id) {
+	public Fornecedor recuperar(Integer id) {
 		return em.find(Fornecedor.class, id);
 	}
 	

@@ -22,7 +22,7 @@ public class CategoriaProdutoRepositorio {
 		
 	}
 	
-	public CategoriaProduto recuperar(long id) {
+	public CategoriaProduto recuperar(Integer id) {
 		return em.find(CategoriaProduto.class, id);
 	}
 	

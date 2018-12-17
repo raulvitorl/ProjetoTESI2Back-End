@@ -15,6 +15,8 @@ public class ProdutoTeste {
 		List<Produto> produtos;
 		
 		CategoriaProduto cp1,cp2,cp3;
+		@SuppressWarnings("unused")
+		Date d1,d2,d3;
 		
 		cp1 = new CategoriaProduto();
 		cp1.setDescricao("Higiene Pessoal");
@@ -48,7 +50,7 @@ public class ProdutoTeste {
 		Fornecedor f1,f2,f3;
 		f1 = new Fornecedor();
 		f1.setCnpj("52.933.955/0001-03");
-		f1.setDataCadastro("2018-10-10");
+		f1.setDataCadastro(d1 = new Date());
 		f1.setEmail("kevinemanuelrodrigoaragao_@ligananet.com.br");
 		f1.setEndereco("Avenida Delmiro Gouveia 366 Paratibe");
 		f1.setFone("(81) 99234-5159");
@@ -60,7 +62,7 @@ public class ProdutoTeste {
 		
 		f2 = new Fornecedor();
 		f2.setCnpj("27.877.495/0001-98");
-		f2.setDataCadastro("2018-11-11");
+		f1.setDataCadastro(d2 = new Date());
 		f2.setEmail("luccapedromiguellimaluccapedromiguellima@eccofibra.com.br");
 		f2.setEndereco("Rua Lagoa da Prata 962 Jardim Centenário");
 		f2.setFone("(67) 99702-8676");
@@ -72,7 +74,7 @@ public class ProdutoTeste {
 		
 		f3 = new Fornecedor();
 		f3.setCnpj("64.483.286/0001-96");
-		f3.setDataCadastro("2018-12-12");
+		f1.setDataCadastro(d3 = new Date());
 		f3.setEmail("giovannithomascaiosales_@vemter.com.br");
 		f3.setEndereco("Travessa Anjo Caliel 415 Colônia Terra Nova");
 		f3.setFone("(92) 99653-3086");

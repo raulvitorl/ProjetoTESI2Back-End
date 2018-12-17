@@ -1,11 +1,13 @@
 package br.ufac.academico.tests;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.swing.JOptionPane;
 
 import br.ufac.academico.domain.Atendente;
 import br.ufac.academico.domain.enums.PerfilAtendente;
+import br.ufac.academico.domain.enums.StatusAtendente;
 import br.ufac.academico.repositories.AtendenteRepositorio;
 
 public class AtendenteTeste {
@@ -15,6 +17,8 @@ public class AtendenteTeste {
 		AtendenteRepositorio ar = new AtendenteRepositorio();
 		List<Atendente> atendentes;
 		Atendente a1,a2,a3;
+		@SuppressWarnings("unused")
+		Date d1,d2,d3;
 		
 		a1 = new Atendente();
 		a1.setCpf("027.725.062-58");
@@ -22,8 +26,8 @@ public class AtendenteTeste {
 		a1.setNome("Raul Vitor Lopes da Costa");
 		a1.setPerfil(PerfilAtendente.SUPERVISOR);
 		a1.setRamal("7034");
-		a1.setStatus('A');
-		a1.setUltimoAcesso("2018-10-10");
+		a1.setStatus(StatusAtendente.AUSENTE);
+		a1.setUltimoAcesso(d1 = new Date());
 		
 		a2 = new Atendente();
 		a2.setCpf("021.590.732-96");
@@ -31,8 +35,8 @@ public class AtendenteTeste {
 		a2.setNome("José William Menezes Ribeiro");
 		a2.setPerfil(PerfilAtendente.BALCONISTA);
 		a2.setRamal("9735");
-		a2.setStatus('A');
-		a2.setUltimoAcesso("2017-05-04");
+		a2.setStatus(StatusAtendente.DISPONIVEL);
+		a2.setUltimoAcesso(d2 = new Date());
 		
 		a3 = new Atendente();
 		a3.setCpf("043.892.560-25");
@@ -40,8 +44,8 @@ public class AtendenteTeste {
 		a3.setNome("Anderson Thomas Corte Real");
 		a3.setPerfil(PerfilAtendente.BALCONISTA);
 		a3.setRamal("2845");
-		a3.setStatus('I');
-		a3.setUltimoAcesso("2015-12-12");
+		a3.setStatus(StatusAtendente.DISPONIVEL);
+		a3.setUltimoAcesso(d3 = new Date());
 		
 		System.out.println("TESTE DE ADIÇÃO");
 		ar.adicionar(a1);

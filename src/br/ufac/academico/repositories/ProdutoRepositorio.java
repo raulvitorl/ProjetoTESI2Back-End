@@ -22,7 +22,7 @@ public class ProdutoRepositorio {
 		
 	}
 	
-	public Produto recuperar(long id) {
+	public Produto recuperar(Integer id) {
 		return em.find(Produto.class, id);
 	}
 	

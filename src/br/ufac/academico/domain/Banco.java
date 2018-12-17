@@ -18,14 +18,14 @@ public class Banco {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private long codigo;
+	private Integer codigo;
 	@Column(name="nome")
 	private String nome;
 
-	@OneToMany(mappedBy = "banco", targetEntity = Venda.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "banco", targetEntity = Venda.class, fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
 	private Collection<Venda> vendas;
 
-	public Banco(long codigo, String nome) {
+	public Banco(Integer codigo, String nome) {
 		this.codigo = codigo;
 		this.nome = nome;
 	}
@@ -34,7 +34,7 @@ public class Banco {
 
 	}
 
-	public long getCodigo() {
+	public Integer getCodigo() {
 		return codigo;
 	}
 
@@ -55,7 +55,7 @@ public class Banco {
 		this.vendas = vendas;
 	}
 
-	public void setCodigo(long codigo) {
+	public void setCodigo(Integer codigo) {
 		this.codigo = codigo;
 	}
 

@@ -19,12 +19,12 @@ public class CategoriaProduto {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private long codigo;
+	private Integer codigo;
 	@Column(name="identificador")
 	private int identificador;
 	@Column(name="descricao")
 	private String descricao;
-	@OneToMany(mappedBy = "categoria", targetEntity = Produto.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "categoria", targetEntity = Produto.class, fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
 	private Collection<Produto> produtos;
 
 	public CategoriaProduto(){
@@ -45,14 +45,14 @@ public class CategoriaProduto {
 
 
 
-	public long getCodigo() {
+	public Integer getCodigo() {
 		return codigo;
 	}
 
 
 
 
-	public void setCodigo(long codigo) {
+	public void setCodigo(Integer codigo) {
 		this.codigo = codigo;
 	}
 
@@ -90,7 +90,7 @@ public class CategoriaProduto {
 	@Override
 	public String toString() {
 		return "CategoriasProdutos [codigo=" + codigo + ", identificador=" + identificador + ", descricao=" + descricao
-				+ ", produtos=" + produtos + "]";
+				+ "]";
 	}
 	
 	

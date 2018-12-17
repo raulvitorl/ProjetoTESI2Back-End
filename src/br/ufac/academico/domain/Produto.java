@@ -25,7 +25,7 @@ import javax.persistence.Table;
 	@NamedQuery(name="Produtos.todos", 
 		query="SELECT p FROM Produto p"),
 	
-	@NamedQuery(name="Produtos.todosPorDescricao", 
+	@NamedQuery(name="Produtos.todosPorNome", 
 		query="SELECT p FROM Produto p ORDER BY p.descricao")
 })
 public class Produto {
@@ -33,7 +33,7 @@ public class Produto {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private long codigo;
+	private Integer codigo;
 	@Column(name="pro_descricao")
 	private String descricao;
 	@Column(name="pro_qnt_disponivel")
@@ -50,11 +50,11 @@ public class Produto {
 	@ManyToMany(mappedBy="produtos")
 	private Collection<Venda> vendas;
 	
-	@ManyToOne(cascade={CascadeType.ALL})
+	@ManyToOne(cascade={CascadeType.MERGE})
 	@JoinColumn(name="pro_for_codigo")	
 	private Fornecedor fornecedor;
 	
-	@ManyToOne(cascade={CascadeType.ALL})
+	@ManyToOne(cascade={CascadeType.MERGE})
 	@JoinColumn(name="categoriaProduto")	
 	private CategoriaProduto categoria;
 	
@@ -64,12 +64,12 @@ public Produto(){
 	}
 
 
-public long getCodigo() {
+public Integer getCodigo() {
 	return codigo;
 }
 
 
-public void setCodigo(long codigo) {
+public void setCodigo(Integer codigo) {
 	this.codigo = codigo;
 }
 
@@ -170,7 +170,7 @@ public void setVendas(Collection<Venda> vendas) {
 public String toString() {
 	return "Produto [codigo=" + codigo + ", descricao=" + descricao + ", qntDisponivel=" + qntDisponivel
 			+ ", ultimaAquisicao=" + ultimaAquisicao + ", valorUnitario=" + valorUnitario + ", fabricante=" + fabricante
-			+ ", detalhes=" + detalhes + ", vendas=" + vendas + ", fornecedor=" + fornecedor + ", categoria="
+			+ ", detalhes=" + detalhes + ", categoria="
 			+ categoria + "]";
 }
 
